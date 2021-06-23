@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import './Nav.scss';
 
 class Nav extends Component {
   render() {
     return (
-      <nav>
+      <nav className="other">
         <div className="header-nav-wrap">
           <div className="header-sub-box">
             <div className="logo-wrap">
