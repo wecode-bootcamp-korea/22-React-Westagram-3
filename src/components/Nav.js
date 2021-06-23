@@ -3,15 +3,13 @@ import './Nav.scss';
 
 class Nav extends Component {
   render() {
-    let title = "westagram";
-
     return (
       <nav>
         <div className="header-nav-wrap">
           <div className="header-sub-box">
             <div className="logo-wrap">
               <a href="/" className="logo">
-                {title}
+                westagram
               </a>
             </div>
             <div className="search-bar-wrap">
@@ -28,7 +26,7 @@ class Nav extends Component {
                 <div className="speech-bubble">
                   <ul>
                     <li>
-                      <a href=""></a>
+                      <a href="."></a>
                     </li>
                   </ul>
                 </div>

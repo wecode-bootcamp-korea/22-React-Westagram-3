@@ -1,7 +1,14 @@
 /*common*/
-html, body, #react-root{height:100%;}
+html, body, #react-root{
+    height:100%;
+}
 section{height:100%;}
-#root, article, div, footer, header, main, nav, section, .App{display:flex;position:relative;flex-direction:column;}
+#root, article, div, footer, header, main, nav, section{
+    display:flex;
+    position:relative;
+    flex-direction:column;
+    box-sizing:border-box;
+}
 input{
     &:focus{outline: none;}
 }

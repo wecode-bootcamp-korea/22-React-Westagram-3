@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 
 import Nav from '../../../components/Nav';
 
-
 class Main extends Component {
     render() {
         return (
