@@ -1,6 +1,10 @@
 import React from "react";
-import Login from './pages/unseoJang/Login/Login';
-import Main from './pages/unseoJang/Main/Main';
+import LoginUnseo from './pages/unseoJang/Login/Login';
+import MainUnseo from './pages/unseoJang/Main/Main';
+import Loginjisu from './pages/jisuOh/Login/Login';
+import Mainjisu from './pages/jisuOh/Main/Main';
+import Loginjaesang from './pages/jaesangChoi/Login/Login';
+import Mainjaesang from './pages/jaesangChoi/Main/Main';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,8 +17,12 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/main" component={Main} />
+          <Route exact path="/login-unseo" component={LoginUnseo} />
+          <Route exact path="/main-unseo" component={MainUnseo} />
+          <Route exact path="/login-jisu" component={Loginjisu} />
+          <Route exact path="/main-jisu" component={Mainjisu} />
+          <Route exact path="/login-jaesang" component={Loginjaesang} />
+          <Route exact path="/main-jaesang" component={Mainjaesang} />
         </Switch>
       </Router>
     );
