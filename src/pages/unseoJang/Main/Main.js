@@ -1,5 +1,3 @@
-import '../../../styles/common.scss';
-import '../../../styles/reset.scss';
 import './Main.scss';
 
 import React, { Component } from 'react';
