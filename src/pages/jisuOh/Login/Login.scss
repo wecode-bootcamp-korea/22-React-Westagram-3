@@ -37,10 +37,6 @@ button {
   justify-content: center;
   align-items: center;
 
-  * {
-    box-sizing: border-box;
-  }
-
   .weatagram__main {
     display: flex;
     justify-content: center;
@@ -77,7 +73,7 @@ button {
           padding: $margin-value;
 
           .logo__h1 {
-            font-size: $font-size-xlarge;
+            font-size: $font-size-xxlarge;
             font-family: $font-stack-L;
           }
         }
@@ -123,6 +119,7 @@ button {
               border: 1px solid $color-gray2;
               border-radius: 5px;
               background-color: $color-lightgray;
+              box-sizing: border-box;
 
               &:focus {
                 outline: none;
@@ -223,6 +220,10 @@ button {
         background-color: $color-white;
         border: 1px solid $color-gray2;
 
+        .noaccount {
+          font-size: $font-size--normal;
+        }
+
         .signup-link {
           color: $color-blue;
           font-weight: bold;
@@ -242,6 +243,10 @@ button {
         align-items: center;
         width: 100%;
 
+        .description {
+          font-size: $font-size--normal;
+        }
+
         .badge {
           display: inline-block;
           margin-top: $margin-value;
@@ -257,6 +262,7 @@ button {
     justify-content: center;
     width: 100%;
     padding: $padding-value;
+    font-size: $font-size--normal;
 
     .meta-link {
       display: flex;
