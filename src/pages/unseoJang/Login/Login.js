@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Login extends Component {
   render() {
     return (
-      <section className="westagram-login-wrap">
+      <section className="westagram-login-wrap other">
         <main className="main-wrap">
           <div className="contetns-wrap">
             <div className="box-wrap">

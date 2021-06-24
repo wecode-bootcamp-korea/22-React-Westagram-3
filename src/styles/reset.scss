@@ -17,7 +17,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
-  line-height: 1; }
+  line-height: 1;
+  font-style: normal;
+   font-family:'돋움',Dotum,Helvetica,Verdana,Arial,sans-serif;
+}
 
 ol, ul {
   list-style: none; }
@@ -40,4 +43,25 @@ table {
   border-spacing: 0; }
 a{
   text-decoration:none;
+}
+button {
+  margin:0;
+  padding:0;
+  border:0;
+  font:inherit;
+  color:inherit;
+  background:transparent;
+  overflow:visible;
+  cursor:pointer;
+  line-height:1;
+}
+em {font-style:normal;}
+a:link, 
+a:visited, 
+a:hover, 
+a, active, 
+a:focus{
+    text-decoration: none;
+    cursor: pointer;
+    color: #999;
 }
