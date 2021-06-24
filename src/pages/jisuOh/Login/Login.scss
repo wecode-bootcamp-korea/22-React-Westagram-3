@@ -180,6 +180,7 @@ button {
             span {
               color: $color-facebook;
               font-weight: bold;
+              margin-left: $padding-value--7;
 
               &:active {
                 color: $color-facebooklight;

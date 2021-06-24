@@ -69,7 +69,8 @@ class Main extends React.Component {
                         />
                       </div>
                       <span>
-                        <b>aineworld</b>님 외 <b>10명</b>이 좋아합니다
+                        <span className="weight">aineworld</span>님 외{' '}
+                        <span className="weight">10명</span>이 좋아합니다
                       </span>
                     </section>
                     <section class="feed__comment">
