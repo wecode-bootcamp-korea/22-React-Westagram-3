@@ -23,20 +23,6 @@ section {
   }
 }
 
-.other {
-  article,
-  div,
-  footer,
-  header,
-  main,
-  nav,
-  section {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-  }
-}
-
 input {
   &:focus {
     outline: none;
