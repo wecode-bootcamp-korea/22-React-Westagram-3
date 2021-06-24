@@ -211,7 +211,7 @@ class Main extends React.Component {
                   </li>
                 </ul>
               </article>
-              <nav class="etc-link">
+              <div class="etc-link">
                 <ul class="links">
                   <li class="links-item">
                     <a href="#">Instagram 정보</a>
@@ -247,7 +247,7 @@ class Main extends React.Component {
                     <a href="#">언어</a>
                   </li>
                 </ul>
-              </nav>
+              </div>
               <p class="copyright">&copy; 2021 Westagram</p>
             </aside>
           </div>

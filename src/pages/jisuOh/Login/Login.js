@@ -86,7 +86,7 @@ class Login extends React.Component {
           </article>
         </main>
         <footer className="westagram__footer">
-          <nav className="meta-link">
+          <div className="meta-link">
             <a href="#">소개</a>
             <a href="#">블로그</a>
             <a href="#">채용 정보</a>
@@ -97,7 +97,7 @@ class Login extends React.Component {
             <a href="#">인기 계정</a>
             <a href="#">해시태그</a>
             <a href="#">위치</a>
-          </nav>
+          </div>
           <div className="lan-copyright">
             <span className="copyright">
               &copy; 2021 Westagram from Jisu.Oh
