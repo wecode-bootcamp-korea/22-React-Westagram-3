@@ -1,15 +1,11 @@
-import React from "react";
+import React from 'react';
 import LoginUnseo from './pages/unseoJang/Login/Login';
 import MainUnseo from './pages/unseoJang/Main/Main';
 import Loginjisu from './pages/jisuOh/Login/Login';
 import Mainjisu from './pages/jisuOh/Main/Main';
 import Loginjaesang from './pages/jaesangChoi/Login/Login';
 import Mainjaesang from './pages/jaesangChoi/Main/Main';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class Routes extends React.Component {
   render() {
