@@ -181,8 +181,8 @@ class ContetnsWrap extends Component {
                 </ul>
               </div>
               <div className="time-wrap">
-                <a href="#" onclick="return false;">
-                  <time dataTime="2021-06-15T07:11:27.000Z">2시간 전</time>
+                <a href="#">
+                  <time datatime="2021-06-15T07:11:27.000Z">2시간 전</time>
                 </a>
               </div>
             </section>
