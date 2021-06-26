@@ -2,6 +2,45 @@ import React, { Component } from 'react';
 import './Feeds.scss';
 
 class Feeds extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comment: '',
+      comments: [],
+      idvalue: 0,
+    };
+  }
+
+  handleComment = e => {
+    this.setState({
+      comment: e.target.value,
+    });
+  };
+
+  pressButton = () => {
+    this.setState({
+      comments: this.state.comments.concat({
+        id: this.state.idvalue,
+        text: this.state.comment,
+      }),
+    });
+
+    this.state.idvalue += 1;
+  };
+
+  enterDown = e => {
+    if (e.code === 'Enter') {
+      this.setState({
+        comments: this.state.comments.concat({
+          id: this.state.idvalue,
+          text: this.state.comment,
+        }),
+      });
+
+      this.state.idvalue += 1;
+    }
+  };
+
   render() {
     return (
       <div className="feeds">
@@ -73,19 +112,27 @@ class Feeds extends Component {
 
           <div className="third_comment">42분 전</div>
 
+          <ul className="comment_list">
+            {this.state.comments.map(t => {
+              return <li>{t.text}</li>;
+            })}
+          </ul>
+
           <div className="push_comment">
             <div className="push_comment_icon">
               <img alt="스마일아이콘" src="/images/jaesangChoi/smile.png" />
             </div>
             <div className="push_comment_text">
               <input
+                onChange={this.handleComment}
+                onKeyDown={this.enterDown}
                 className="input_comment"
                 type="text"
                 placeholder="댓글달기..."
               />
             </div>
             <div className="push_comment_button">
-              <button>게시</button>
+              <button onClick={this.pressButton}>게시</button>
             </div>
           </div>
         </article>
