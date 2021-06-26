@@ -18,7 +18,7 @@ class Login extends Component {
       let idValue = String(this.state.id);
 
       idValue.indexOf('@') === -1
-        ? this.setState({ idpass: 'fauled' })
+        ? this.setState({ idpass: 'failed' })
         : this.setState({ idpass: 'passed' });
     });
   };
@@ -28,12 +28,13 @@ class Login extends Component {
       let pwValue = String(this.state.pw);
 
       pwValue.length >= 5
-        ? this.setState({ pwpss: 'nice' })
+        ? this.setState({ pwpass: 'nice' })
         : this.setState({ pwpass: 'shit' });
     });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="log_in_box">
         <div className="title">westagram</div>
@@ -56,7 +57,15 @@ class Login extends Component {
           </div>
         </div>
 
-        <Login_Button />
+        <Login_Button
+          idfunc={this.state.idpass}
+          pwfunc={this.state.pwpass}
+          colorfunc={
+            this.state.idpass === 'passed' && this.state.pwpass === 'nice'
+              ? 'blue'
+              : 'sky_blue'
+          }
+        />
 
         <p> 비밀번호를 잊으셨나요? </p>
       </div>
