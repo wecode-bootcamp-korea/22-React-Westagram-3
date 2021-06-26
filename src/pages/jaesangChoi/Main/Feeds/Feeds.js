@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comment from './Comment/Comment';
 import './Feeds.scss';
 
 class Feeds extends Component {
@@ -114,7 +115,7 @@ class Feeds extends Component {
 
           <ul className="comment_list">
             {this.state.comments.map(t => {
-              return <li>{t.text}</li>;
+              return <Comment key={t.id} text={t.text} />;
             })}
           </ul>
 
