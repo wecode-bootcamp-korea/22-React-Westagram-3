@@ -14,13 +14,13 @@ class Login extends Component {
   handleIdInput = e => {
     //IdInout은 event의 약자 e를 인자로 받음
     this.setState({
-      idInputValue: `${e.target.value}`,
+      idInputValue: e.target.value,
     });
   };
 
   handlePwInput = e => {
     this.setState({
-      pwInputValue: `${e.target.value}`,
+      pwInputValue: e.target.value,
     });
   };
 

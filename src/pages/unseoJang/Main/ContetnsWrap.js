@@ -1,6 +1,46 @@
 import React, { Component } from 'react';
 
 class ContetnsWrap extends Component {
+  constructor() {
+    super();
+    //state 생성
+    this.state = {
+      commentValue: '',
+      commentList: [],
+      value: '', //this.state를 다시 빈 분자열로
+    };
+  }
+  //state 상태 핸들러
+  handleCommentInput = e => {
+    this.setState({
+      commentValue: e.target.value,
+      value: e.target.value,
+    });
+    console.log(e.target.value);
+  };
+  //console.log(handleCommentInput());
+  //버튼 클릭 이벤트와 함수 생성
+  addComment = e => {
+    const { commentValue, commentList } = this.state; //구조분해할당
+    this.setState({
+      commentList: commentList.concat([commentValue]),
+      commentValue: '',
+      value: '',
+    });
+    {
+      console.log('버튼 클릭 이벤트와 함수 생성');
+    }
+    e.preventDefault();
+  };
+  //엔터쳤을때
+  addCommEnter = e => {
+    if (e.key === 'enter') {
+      this.comment();
+    }
+    {
+      console.log('엔터쳤을때');
+    }
+  };
   render() {
     return (
       <section className="contetns-wrap">
@@ -100,8 +140,8 @@ class ContetnsWrap extends Component {
                   </button>
                 </li>
                 <li>
-                  <button className="  " type="button">
-                    <div className=" ">
+                  <button className="" type="button">
+                    <div className="">
                       <svg
                         aria-label="댓글 달기"
                         className=" "
@@ -178,6 +218,18 @@ class ContetnsWrap extends Component {
                       <br />
                     </span>
                   </li>
+                  {this.state.commentList.map((commentElement, idx) => {
+                    return (
+                      <li key={idx}>
+                        <span className="id-wrap">
+                          <a href="#" tabIndex="0" className="comment-id">
+                            kimdaebeom
+                          </a>
+                        </span>
+                        <span>{commentElement}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="time-wrap">
@@ -188,7 +240,7 @@ class ContetnsWrap extends Component {
             </section>
             <section className="comment-input-wrap">
               <div className="comment-box-wrap">
-                <form action="">
+                <form onSubmit={this.addComment}>
                   <div className="commnet-input">
                     <button className="btn-emoticon" type="button">
                       <div>
@@ -205,14 +257,20 @@ class ContetnsWrap extends Component {
                         </svg>
                       </div>
                     </button>
-                    <label for="commentInput">
+                    <label>
                       <input
                         type="text"
                         placeholder="댓글 달기"
                         id="commentInput"
+                        onChange={this.handleCommentInput}
+                        value={this.state.value}
                       />
                     </label>
-                    <button type="type" className="btn-comment">
+                    <button
+                      type="type"
+                      className="btn-comment"
+                      onClick={this.addComment}
+                    >
                       게시
                     </button>
                   </div>
