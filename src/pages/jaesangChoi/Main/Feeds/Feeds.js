@@ -19,16 +19,20 @@ class Feeds extends Component {
   };
 
   pressButton = () => {
+    console.log('pressButton');
+
     this.setState({
       comments: this.state.comments.concat({
         id: this.state.idvalue,
         text: this.state.comment,
       }),
+      idvalue: this.state.idvalue + 1,
     });
 
-    this.state.idvalue += 1;
+    return;
   };
 
+  //한글 댓글은 엔터누르면 댓글이 두개달림...
   enterDown = e => {
     if (e.code === 'Enter') {
       this.setState({
@@ -36,13 +40,15 @@ class Feeds extends Component {
           id: this.state.idvalue,
           text: this.state.comment,
         }),
+        idvalue: this.state.idvalue + 1,
       });
-
-      this.state.idvalue += 1;
     }
+
+    return;
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="feeds">
         <article>
@@ -126,7 +132,7 @@ class Feeds extends Component {
             <div className="push_comment_text">
               <input
                 onChange={this.handleComment}
-                onKeyDown={this.enterDown}
+                onKeyPress={this.enterDown}
                 className="input_comment"
                 type="text"
                 placeholder="댓글달기..."

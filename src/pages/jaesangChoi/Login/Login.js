@@ -13,13 +13,32 @@ class Login extends Component {
     };
   }
 
-  handleIdInput = e => {
-    this.setState({ id: e.target.value }, () => {
-      let idValue = String(this.state.id);
+  // handleIdInput = e => {
+  //   this.setState({ id: e.target.value }, () => {
+  //     let idValue = String(this.state.id);
 
-      idValue.indexOf('@') === -1
-        ? this.setState({ idpass: 'failed' })
-        : this.setState({ idpass: 'passed' });
+  //     idValue.indexOf('@') === -1
+  //       ? this.setState({ idpass: 'failed' })
+  //       : this.setState({ idpass: 'passed' });
+  //   });
+  // };
+
+  // handleIdInput2 = e => {
+  //   this.setState({ id: e.target.value });
+  //   let idValue = String(this.state.id);
+
+  //   idValue.indexOf('@') === -1
+  //   ? this.setState({ idpass: 'failed' })
+  //   : this.setState({ idpass: 'passed' });
+
+  // };
+
+  handleIdInput = e => {
+    const value = e.target.value;
+
+    this.setState({
+      id: value,
+      idpass: value.indexOf('@') === -1 ? 'failed' : 'passed',
     });
   };
 
