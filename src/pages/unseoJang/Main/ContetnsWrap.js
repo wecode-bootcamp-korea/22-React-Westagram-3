@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Comment from './Comment.js';
+
 class ContetnsWrap extends Component {
   constructor() {
     super();
@@ -218,7 +220,10 @@ class ContetnsWrap extends Component {
                       <br />
                     </span>
                   </li>
-                  {this.state.commentList.map((commentElement, idx) => {
+                  {this.state.commentList.map(commentElement => {
+                    return <Comment comment={commentElement} />;
+                  })}
+                  {/* {this.state.commentList.map((commentElement, idx) => {
                     return (
                       <li key={idx}>
                         <span className="id-wrap">
@@ -229,7 +234,7 @@ class ContetnsWrap extends Component {
                         <span>{commentElement}</span>
                       </li>
                     );
-                  })}
+                  })} */}
                 </ul>
               </div>
               <div className="time-wrap">
