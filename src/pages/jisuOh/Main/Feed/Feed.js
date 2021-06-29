@@ -19,13 +19,13 @@ class Feed extends React.Component {
     const { comments, comment } = this.state;
     e.preventDefault();
     this.setState({
+      comment: '',
       comments: comments.concat({
         id: comments.length + 1,
         nickname: 'love8080',
         comment: comment,
       }),
     });
-    this.setState({ comment: '' });
   };
 
   deleteComment = id => {
