@@ -26,7 +26,7 @@ class ContetnsWrap extends Component {
   addComment = e => {
     const { commentValue, commentList } = this.state; //구조분해할당
     this.setState({
-      commentList: commentList.concat([commentValue]),
+      commentList: commentList.concat({ comment: this.state.commentValue }),
       commentValue: '',
       value: '',
     });
@@ -60,7 +60,7 @@ class ContetnsWrap extends Component {
   }
 
   render() {
-    //console.log(this.state);
+    console.log(this.state);
     return (
       <section className="contetns-wrap">
         <article>
@@ -226,7 +226,7 @@ class ContetnsWrap extends Component {
             <section className="comment-wrap">
               <div className="comment-list">
                 <ul className="list">
-                  {this.state.commentList.map(el => {
+                  {/* {this.state.commentList.map(el => {
                     return (
                       <CommenList
                         commentList={el}
@@ -235,10 +235,10 @@ class ContetnsWrap extends Component {
                         comment={el.comment}
                       />
                     );
-                  })}
-                  {/* {this.state.commentList.map(el => {
-                    return <Comment key={el.key} comment={el.comment} />;
                   })} */}
+                  {this.state.commentList.map(el => {
+                    return <Comment key={el.key} comment={el.comment} />;
+                  })}
                   {/* {this.state.commentList.map((commentElement, idx) => {
                     return (
                       <li key={idx}>
