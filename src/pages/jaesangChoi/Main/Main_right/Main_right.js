@@ -44,7 +44,7 @@ class Main_right extends Component {
             {this.state.Recommendationlist.map(list => {
               return (
                 <Recommendation_list
-                  id={list.id}
+                  key={list.id}
                   src={list.src}
                   main_name={list.main_name}
                   sub_name={list.sub_name}

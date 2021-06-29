@@ -8,9 +8,24 @@ class Feeds extends Component {
     this.state = {
       comment: '',
       comments: [],
-      idvalue: 0,
     };
   }
+
+  callApi = () => {
+    fetch(this.props.fetch, {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          comments: data,
+        });
+      });
+  };
+
+  componentDidMount = () => {
+    this.callApi();
+  };
 
   handleComment = e => {
     this.setState({
@@ -23,24 +38,24 @@ class Feeds extends Component {
 
     this.setState({
       comments: this.state.comments.concat({
-        id: this.state.idvalue,
+        id: this.state.comments.length + 1,
         text: this.state.comment,
       }),
-      idvalue: this.state.idvalue + 1,
+      comment: '',
     });
 
     return;
   };
 
-  //한글 댓글은 엔터누르면 댓글이 두개달림...
+  //한글 댓글은 엔터누르면 댓글이 두개달림... -> 크롬버그다 -> onkeypress로 바꾸자
   enterDown = e => {
     if (e.code === 'Enter') {
       this.setState({
         comments: this.state.comments.concat({
-          id: this.state.idvalue,
+          id: this.state.comments.length + 1,
           text: this.state.comment,
         }),
-        idvalue: this.state.idvalue + 1,
+        comment: '',
       });
     }
 
@@ -48,13 +63,13 @@ class Feeds extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="feeds">
         <article>
           <div className="feeds_profile">
             <div className="feeds_profile_image">
-              <img alt="프로필" src="/images/jaesangChoi/profile1.jpeg" />
+              <img alt="프로필" src={this.props.profilesrc} />
             </div>
             <p className="feeds_profile_name">
               <span className="feeds_profile_main_name">
@@ -69,7 +84,7 @@ class Feeds extends Component {
             <img
               alt="sunset"
               className="main_feed_img"
-              src="https://images.unsplash.com/photo-1623659993428-0c5504a16ca5?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Mnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              src={this.props.mainfeedsrc}
             />
           </div>
 
@@ -133,6 +148,7 @@ class Feeds extends Component {
               <input
                 onChange={this.handleComment}
                 onKeyPress={this.enterDown}
+                value={this.state.comment}
                 className="input_comment"
                 type="text"
                 placeholder="댓글달기..."
