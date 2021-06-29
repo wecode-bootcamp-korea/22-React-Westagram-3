@@ -79,7 +79,7 @@ class Loginbox extends React.Component {
             <img
               alt="Facebook"
               className="facebook-icon"
-              src="images/facebook.png"
+              src="images/jisuOh/facebook.png"
             />
             <span className="facebook__span">Facebook으로 로그인</span>
           </button>
