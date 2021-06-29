@@ -21,6 +21,7 @@ class Main extends React.Component {
   }
 
   render() {
+    const { feeds } = this.state;
     return (
       <div className="main-wrapper">
         <Nav />
@@ -28,7 +29,7 @@ class Main extends React.Component {
           <main className="we-main">
             <section className="feed-box">
               <ul>
-                {this.state.feeds.map(el => (
+                {feeds.map(el => (
                   <Feed feedData={el} key={el.feedId} />
                 ))}
               </ul>

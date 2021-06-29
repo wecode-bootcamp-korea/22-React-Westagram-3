@@ -2,11 +2,39 @@ import React from 'react';
 import './Login.scss';
 
 class Login extends React.Component {
+  state = {
+    id: '',
+    pw: '',
+  };
+
+  checkIdAndPassword = e => {
+    const { id, pw } = this.state;
+
+    e.preventDefault();
+
+    if (!id.includes('@')) {
+      alert('@를 포함시켜 주세요!');
+    } else if (pw < 5) {
+      alert('비밀번호는 5글자 이상이여야 합니다!');
+    } else {
+      this.props.goToMain();
+    }
+  };
+
+  handleChange = e => {
+    const { className, value } = e.target;
+    className === 'text-id'
+      ? this.setState({ id: value })
+      : this.setState({ pw: value });
+  };
+
   goToMain = () => {
     this.props.history.push('./main-jisu');
   };
 
   render() {
+    const { id, pw } = this.state;
+    const { handleChange, checkIdAndPassword } = this;
     return (
       <div className="westagram-wrapper">
         <main className="weatagram__main">
@@ -23,18 +51,26 @@ class Login extends React.Component {
                   <input
                     type="text"
                     className="text-id"
+                    value={id}
+                    onChange={handleChange}
                     placeholder="전화번호, 사용자 이름 또는 이메일"
                   />
                 </div>
                 <div className="pw-box">
                   <input
                     type="password"
+                    value={pw}
+                    onChange={handleChange}
                     className="pw"
                     placeholder="비밀번호"
                   />
                 </div>
                 <div className="btn-box">
-                  <button className="btn-login" disabled>
+                  <button
+                    className="btn-login"
+                    onClick={checkIdAndPassword}
+                    disabled={!id || !pw}
+                  >
                     로그인
                   </button>
                 </div>
@@ -43,10 +79,11 @@ class Login extends React.Component {
                   <span>또는</span>
                   <div></div>
                 </div>
-                <button className="facebook-btn" onClick={this.goToMain}>
+                <button className="facebook-btn">
                   <img
+                    alt="Facebook"
                     className="facebook-icon"
-                    src="images/jisuOh/facebook.png"
+                    src="images/facebook.png"
                   />
                   <span className="facebook__span">Facebook으로 로그인</span>
                 </button>
