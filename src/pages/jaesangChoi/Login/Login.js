@@ -20,6 +20,7 @@ class Login extends Component {
 
   render() {
     const { handleInput } = this;
+    const { id, pw } = this.state;
 
     return (
       <div className="log_in_box">
@@ -46,12 +47,10 @@ class Login extends Component {
         </div>
 
         <Login_Button
-          idfunc={this.state.id.indexOf('@') === -1 ? 'failed' : 'passed'}
-          pwfunc={this.state.pw.length >= 5 ? 'nice' : 'shit'}
+          idfunc={id.indexOf('@') === -1 ? 'failed' : 'passed'}
+          pwfunc={pw.length >= 5 ? 'nice' : 'shit'}
           colorfunc={
-            this.state.id.indexOf('@') !== -1 && this.state.pw.length >= 5
-              ? 'blue'
-              : 'sky_blue'
+            id.indexOf('@') !== -1 && pw.length >= 5 ? 'blue' : 'sky_blue'
           }
         />
 
