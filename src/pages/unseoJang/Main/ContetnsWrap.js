@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import Comment from './Comment.js';
+import Comment from './Comment';
+import CommenList from './CommentList';
 
 class ContetnsWrap extends Component {
   constructor() {
@@ -12,6 +13,7 @@ class ContetnsWrap extends Component {
       value: '', //this.state를 다시 빈 분자열로
     };
   }
+
   //state 상태 핸들러
   handleCommentInput = e => {
     this.setState({
@@ -20,7 +22,6 @@ class ContetnsWrap extends Component {
     });
     console.log(e.target.value);
   };
-  //console.log(handleCommentInput());
   //버튼 클릭 이벤트와 함수 생성
   addComment = e => {
     const { commentValue, commentList } = this.state; //구조분해할당
@@ -43,7 +44,23 @@ class ContetnsWrap extends Component {
       console.log('엔터쳤을때');
     }
   };
+  //목데이터
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        this.setState({
+          commentList: res,
+        });
+      });
+  }
+
   render() {
+    //console.log(this.state);
     return (
       <section className="contetns-wrap">
         <article>
@@ -209,20 +226,19 @@ class ContetnsWrap extends Component {
             <section className="comment-wrap">
               <div className="comment-list">
                 <ul className="list">
-                  <li>
-                    <span className="id-wrap">
-                      <a href="#" tabIndex="0" className="comment-id">
-                        kimdaebeom
-                      </a>
-                    </span>
-                    <span>
-                      ? 천안와서 돌아이가 연락을 안했넹?😮
-                      <br />
-                    </span>
-                  </li>
-                  {this.state.commentList.map(commentElement => {
-                    return <Comment comment={commentElement} />;
+                  {this.state.commentList.map(el => {
+                    return (
+                      <CommenList
+                        commentList={el}
+                        key={el.key}
+                        userId={el.userId}
+                        comment={el.comment}
+                      />
+                    );
                   })}
+                  {/* {this.state.commentList.map(el => {
+                    return <Comment key={el.key} comment={el.comment} />;
+                  })} */}
                   {/* {this.state.commentList.map((commentElement, idx) => {
                     return (
                       <li key={idx}>

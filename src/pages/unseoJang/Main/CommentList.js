@@ -1,19 +1,19 @@
 import React from 'react';
 
-class Comment extends React.Component {
+class CommentList extends React.Component {
   render() {
-    const { comment } = this.props;
+    const { commentList } = this.props;
     return (
       <li key="{el.key}">
         <span className="id-wrap">
           <a href="#" tabIndex="0" className="comment-id">
-            kimdaebeom
+            {commentList.userId}
           </a>
         </span>
-        <span>{comment}</span>
+        <span>{commentList.comment}</span>
       </li>
     );
   }
 }
 
-export default Comment;
+export default CommentList;
