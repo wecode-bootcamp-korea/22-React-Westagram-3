@@ -47,7 +47,6 @@ class Feeds extends Component {
     return;
   };
 
-  //한글 댓글은 엔터누르면 댓글이 두개달림... -> 크롬버그다 -> onkeypress로 바꾸자
   enterDown = e => {
     if (e.code === 'Enter') {
       this.setState({
@@ -63,7 +62,6 @@ class Feeds extends Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <div className="feeds">
         <article>

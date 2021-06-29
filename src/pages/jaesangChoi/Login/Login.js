@@ -13,54 +13,35 @@ class Login extends Component {
     };
   }
 
-  // handleIdInput = e => {
-  //   this.setState({ id: e.target.value }, () => {
-  //     let idValue = String(this.state.id);
-
-  //     idValue.indexOf('@') === -1
-  //       ? this.setState({ idpass: 'failed' })
-  //       : this.setState({ idpass: 'passed' });
-  //   });
-  // };
-
-  // handleIdInput2 = e => {
-  //   this.setState({ id: e.target.value });
-  //   let idValue = String(this.state.id);
-
-  //   idValue.indexOf('@') === -1
-  //   ? this.setState({ idpass: 'failed' })
-  //   : this.setState({ idpass: 'passed' });
-
-  // };
-
   handleIdInput = e => {
-    const value = e.target.value;
+    const idvalue = e.target.value;
 
     this.setState({
-      id: value,
-      idpass: value.indexOf('@') === -1 ? 'failed' : 'passed',
+      id: idvalue,
+      idpass: idvalue.indexOf('@') === -1 ? 'failed' : 'passed',
     });
   };
 
   handlePwInput = e => {
-    this.setState({ pw: e.target.value }, () => {
-      let pwValue = String(this.state.pw);
+    const pwvalue = e.target.value;
 
-      pwValue.length >= 5
-        ? this.setState({ pwpass: 'nice' })
-        : this.setState({ pwpass: 'shit' });
+    this.setState({
+      pw: String(pwvalue),
+      pwpass: pwvalue.length >= 5 ? 'nice' : 'shit',
     });
   };
 
   render() {
-    console.log(this.state);
+    const { idpass, pwpass } = this.state;
+    const { handleIdInput, handlePwInput } = this;
+
     return (
       <div className="log_in_box">
         <div className="title">westagram</div>
         <div className="log_in">
           <div className="id">
             <input
-              onChange={this.handleIdInput}
+              onChange={handleIdInput}
               className="id_input"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -68,7 +49,7 @@ class Login extends Component {
           </div>
           <div className="password">
             <input
-              onChange={this.handlePwInput}
+              onChange={handlePwInput}
               className="password_input"
               type="password"
               placeholder="비밀번호"
@@ -77,12 +58,10 @@ class Login extends Component {
         </div>
 
         <Login_Button
-          idfunc={this.state.idpass}
-          pwfunc={this.state.pwpass}
+          idfunc={idpass}
+          pwfunc={pwpass}
           colorfunc={
-            this.state.idpass === 'passed' && this.state.pwpass === 'nice'
-              ? 'blue'
-              : 'sky_blue'
+            idpass === 'passed' && pwpass === 'nice' ? 'blue' : 'sky_blue'
           }
         />
 

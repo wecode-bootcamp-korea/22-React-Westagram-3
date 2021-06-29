@@ -18,6 +18,8 @@ class Main_right extends Component {
   }
 
   render() {
+    const { Recommendationlist } = this.state;
+
     return (
       <div className="main_right">
         <div className="my_profile">
@@ -41,7 +43,7 @@ class Main_right extends Component {
           </div>
 
           <ul>
-            {this.state.Recommendationlist.map(list => {
+            {Recommendationlist.map(list => {
               return (
                 <Recommendation_list
                   key={list.id}

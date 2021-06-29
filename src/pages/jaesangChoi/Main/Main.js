@@ -18,13 +18,14 @@ class Mainjaesang extends Component {
   }
 
   render() {
+    const { feedslist } = this.state;
+
     return (
       <div>
         <Nav />
-
         <div className="main">
           <div>
-            {this.state.feedslist.map(flist => {
+            {feedslist.map(flist => {
               return (
                 <Feeds
                   key={flist.id}
