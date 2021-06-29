@@ -12,7 +12,11 @@ class Comment extends React.Component {
         </div>
         <div className="like-delete">
           <button className="mini-like-btn">
-            <img alt="Heart" className="mini-heart" src="images/heart.png" />
+            <img
+              alt="Heart"
+              className="mini-heart"
+              src="images/jisuOh/heart.png"
+            />
           </button>
           <button
             className="delete-btn"

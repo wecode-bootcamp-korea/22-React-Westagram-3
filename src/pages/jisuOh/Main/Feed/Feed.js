@@ -3,6 +3,33 @@ import CommentList from '../CommentList/CommentList';
 import './Feed.scss';
 
 class Feed extends React.Component {
+  state = {
+    comment: '',
+    comments: [],
+  };
+
+  addComment = e => {
+    e.preventDefault();
+    this.setState({
+      comments: this.state.comments.concat({
+        id: this.state.comments.length + 1,
+        nickname: 'love8080',
+        comment: this.state.comment,
+      }),
+    });
+    this.setState({ comment: '' });
+  };
+
+  deleteComment = id => {
+    this.setState({
+      comments: this.state.comments.filter(content => content.id !== id),
+    });
+  };
+
+  handleChange = e => {
+    this.setState({ comment: e.target.value });
+  };
+
   render() {
     return (
       <li className="feed">
@@ -50,19 +77,26 @@ class Feed extends React.Component {
           </section>
           <section className="feed__comment">
             <ul className="comment__ul">
-              <CommentList />
+              <CommentList
+                comments={this.state.comments}
+                deleteComment={this.deleteComment}
+              />
             </ul>
             <p className="time">42분 전</p>
           </section>
           <section className="comment-input">
-            <form className="comment__form">
+            <form className="comment__form" onSubmit={this.addComment}>
               <input
                 type="text"
                 className="comment-area"
                 placeholder="댓글 달기..."
+                value={this.state.comment}
+                onChange={this.handleChange}
               />
             </form>
-            <button className="post-btn">게시</button>
+            <button className="post-btn" onClick={this.addComment}>
+              게시
+            </button>
           </section>
         </div>
       </li>
