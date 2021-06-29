@@ -33,8 +33,8 @@ class Feeds extends Component {
     });
   };
 
-  pressButton = () => {
-    console.log('pressButton');
+  pressButton = e => {
+    e.preventDefault();
 
     this.setState({
       comments: this.state.comments.concat({
@@ -47,21 +47,10 @@ class Feeds extends Component {
     return;
   };
 
-  enterDown = e => {
-    if (e.code === 'Enter') {
-      this.setState({
-        comments: this.state.comments.concat({
-          id: this.state.comments.length + 1,
-          text: this.state.comment,
-        }),
-        comment: '',
-      });
-    }
-
-    return;
-  };
-
   render() {
+    const { comments, comment } = this.state;
+    const { handleComment, pressButton } = this;
+
     return (
       <div className="feeds">
         <article>
@@ -133,7 +122,7 @@ class Feeds extends Component {
           <div className="third_comment">42분 전</div>
 
           <ul className="comment_list">
-            {this.state.comments.map(t => {
+            {comments.map(t => {
               return <Comment key={t.id} text={t.text} />;
             })}
           </ul>
@@ -142,18 +131,17 @@ class Feeds extends Component {
             <div className="push_comment_icon">
               <img alt="스마일아이콘" src="/images/jaesangChoi/smile.png" />
             </div>
-            <div className="push_comment_text">
+            <form className="push_comment_text" onSubmit={pressButton}>
               <input
-                onChange={this.handleComment}
-                onKeyPress={this.enterDown}
-                value={this.state.comment}
+                onChange={handleComment}
+                value={comment}
                 className="input_comment"
                 type="text"
                 placeholder="댓글달기..."
               />
-            </div>
+            </form>
             <div className="push_comment_button">
-              <button onClick={this.pressButton}>게시</button>
+              <button onClick={pressButton}>게시</button>
             </div>
           </div>
         </article>
