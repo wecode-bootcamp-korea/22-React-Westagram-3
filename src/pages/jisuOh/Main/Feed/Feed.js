@@ -8,6 +8,12 @@ class Feed extends React.Component {
     comments: [],
   };
 
+  componentDidMount() {
+    this.setState({
+      comments: this.props.feedData.comments,
+    });
+  }
+
   addComment = e => {
     e.preventDefault();
     this.setState({
@@ -36,16 +42,16 @@ class Feed extends React.Component {
         <header className="feed__header">
           <div className="profile-box">
             <div className="profiles">
-              <img alt="Profile" src="images/jisuOh/photo/profile1.jpeg" />
+              <img alt="Profile" src={this.props.feedData.profileSrc} />
             </div>
-            <span className="name">love8080</span>
+            <span className="name">{this.props.feedData.nickname}</span>
           </div>
           <span className="menu-icon">
             <img alt="Menu" src="images/jisuOh/menu.png" className="menu" />
           </span>
         </header>
         <section className="feed__photo">
-          <img alt="Feed" src="images/jisuOh/photo/profile1.jpeg" />
+          <img alt="Feed" src={this.props.feedData.feedSrc} />
         </section>
         <div className="comment-wrapper">
           <section className="feed__like">
@@ -68,11 +74,11 @@ class Feed extends React.Component {
           </section>
           <section className="profiles-wrapper">
             <div className="profiles">
-              <img alt="Profile" src="images/jisuOh/photo/profile1.jpeg" />
+              <img alt="Profile" src={this.props.feedData.likeSrc} />
             </div>
             <span>
-              <span className="weight">anuisje</span>님 외{' '}
-              <span className="weight">10명</span>이 좋아합니다
+              <span className="weight">{this.props.feedData.likeNickname}</span>
+              님 외 <span className="weight">10명</span>이 좋아합니다
             </span>
           </section>
           <section className="feed__comment">

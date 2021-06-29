@@ -1,6 +1,5 @@
 import React from 'react';
 import './Login.scss';
-import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
   goToMain = () => {
@@ -73,11 +72,11 @@ class Login extends React.Component {
               <p className="description">앱을 다운로드하세요.</p>
               <div className="badge-box">
                 <a href="" className="badge">
-                  <img alt="App Store" src="images/jisuOh/appstore.png" />
+                  <img alt="AppStore" src="images/jisuOh/appstore.png" />
                 </a>
                 <a href="" className="badge">
                   <img
-                    alt="Google Play"
+                    alt="GooglePlay"
                     src="images/jisuOh/google-play-badge.png"
                   />
                 </a>
