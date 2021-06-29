@@ -1,0 +1,153 @@
+@import '../../style/variables.scss';
+@import '../../style/profile.scss';
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  margin-bottom: $margin-value;
+  background-color: $color-white;
+
+  .feed__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: $padding-value;
+
+    .profile-box {
+      @include box;
+      margin-left: $padding-value;
+    }
+
+    .profiles {
+      @include profiles-size($img-profile--width, $img-profile--width);
+    }
+
+    .profiles img {
+      @include Image;
+    }
+
+    .profile-box span {
+      margin-left: $padding-value--7;
+      font-weight: bold;
+    }
+
+    .menu-icon {
+      width: $icon-width;
+      margin-right: $padding-value;
+    }
+
+    .menu {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* 피드 사진 */
+  .feed__photo {
+    width: 600px;
+    height: 600px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+
+  /* 코멘트 wrapper */
+  .comment-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    .like__section {
+      display: flex;
+      justify-content: space-between;
+      padding: $padding-value--14 $padding-value--14 $padding-value--7
+        $padding-value--14;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-btn {
+      margin-right: $padding-value;
+      width: $icon-button--width;
+    }
+
+    .icon-btn img {
+      width: 100%;
+    }
+
+    .icon-btn.bookmark {
+      margin-right: 0;
+    }
+
+    /* 댓글 - '좋아합니다' 정보 */
+    .profiles-wrapper {
+      display: flex;
+      align-items: center;
+      padding: $padding-value--7 $padding-value;
+
+      .profiles {
+        @include profiles-size($icon-width, $icon-width);
+      }
+
+      .profiles img {
+        @include Image;
+        border: 1px solid $color-gray2;
+        border-radius: 50%;
+      }
+
+      span {
+        .weight {
+          font-weight: bold;
+        }
+      }
+    }
+
+    /* 몇 분 전  */
+    .feed__comment {
+      padding: $padding-value--7 $padding-value;
+
+      .comment__ul {
+        margin-bottom: $padding-value--7;
+      }
+
+      .time {
+        font-size: $font-size--small;
+        color: $color-gray;
+      }
+    }
+
+    /* 댓글 내역 */
+
+    /* 댓글 입력 */
+    .comment-input {
+      display: flex;
+      padding: $padding-value;
+      border-top: 1px solid $color-gray2;
+    }
+
+    .comment__form {
+      flex-grow: 1;
+    }
+
+    .comment-area {
+      width: 100%;
+    }
+
+    .post-btn {
+      font-weight: bold;
+      color: $color-blue;
+    }
+  }
+}
