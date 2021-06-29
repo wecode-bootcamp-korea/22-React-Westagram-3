@@ -4,9 +4,9 @@ class Comment extends React.Component {
   render() {
     const { comment } = this.props;
     return (
-      <li key="{el.key}">
+      <li>
         <span className="id-wrap">
-          <a href="#" tabIndex="0" className="comment-id">
+          <a href="#!" tabIndex="0" className="comment-id">
             kimdaebeom
           </a>
         </span>

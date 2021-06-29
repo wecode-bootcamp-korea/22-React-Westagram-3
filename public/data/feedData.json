@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "key": 1,
+      "userProfileImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/20181013_%EC%9D%B4%EB%8B%AC%EC%9D%98_%EC%86%8C%EB%85%80_%EC%9D%8C%EC%95%85%EC%A4%91%EC%8B%AC_%EB%AF%B8%EB%8B%88_%ED%8C%AC%EB%AF%B8%ED%8C%85_%287%29.jpg/250px-20181013_%EC%9D%B4%EB%8B%AC%EC%9D%98_%EC%86%8C%EB%85%80_%EC%9D%8C%EC%95%85%EC%A4%91%EC%8B%AC_%EB%AF%B8%EB%8B%88_%ED%8C%AC%EB%AF%B8%ED%8C%85_%287%29.jpg",
+      "userId": "chuucandoit",
+      "userFeedImg": "https://w.namu.la/s/2a4d93065b79830ef993f2e13cc517b0d3a95f73b97e8f0caa8513bfe2018d29fbe6cc6d2ca680175e9ce7555ef1c26287c8e8d291905494ff833d88f4afffd34e5807be3ed2b41c6e560d7315225be61a92a08169a4edc13fc9d9ca59db31437c2b3f5cbf9369e526c11d45e0f510f7",
+      "userImgAlt": "물오른 미모의 츄"
+    },
+    {
+      "key": 2,
+      "userProfileImg": "http://localhost:3000/images/unseoJang/94196291_334483640847841_8993817347827433472_n.jpg",
+      "userId": "seeeeee.un",
+      "userFeedImg": "http://localhost:3000/images/unseoJang/contents_01.jpg"
+    },
+    {
+      "key": 3,
+      "userProfileImg": "http://localhost:3000/images/unseoJang/profile_02.jpg",
+      "userId": "kwdmd",
+      "userFeedImg": "http://localhost:3000/images/unseoJang/contents_02.jpg"
+    }
+  ]
+}
