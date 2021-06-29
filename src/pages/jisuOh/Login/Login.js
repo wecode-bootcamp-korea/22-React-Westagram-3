@@ -27,10 +27,10 @@ class Login extends React.Component {
             <section className="download-box">
               <p className="description">앱을 다운로드하세요.</p>
               <div className="badge-box">
-                <a href="" className="badge">
+                <a href="#!" className="badge">
                   <img alt="AppStore" src="images/jisuOh/appstore.png" />
                 </a>
-                <a href="" className="badge">
+                <a href="#!" className="badge">
                   <img
                     alt="GooglePlay"
                     src="images/jisuOh/google-play-badge.png"

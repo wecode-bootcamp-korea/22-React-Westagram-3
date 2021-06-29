@@ -8,7 +8,11 @@ class Footer extends React.Component {
       <footer className="westagram__footer">
         <div className="meta-link">
           {INFO.map(el => {
-            return <a href="#!">{el.content}</a>;
+            return (
+              <a href="#!" key={el.id}>
+                {el.content}
+              </a>
+            );
           })}
         </div>
         <div className="lan-copyright">
