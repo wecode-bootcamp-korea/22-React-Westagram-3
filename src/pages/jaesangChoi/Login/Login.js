@@ -8,32 +8,18 @@ class Login extends Component {
     this.state = {
       id: 'a',
       pw: 0,
-      idpass: 'failed',
-      pwpass: 'shit',
     };
   }
 
-  handleIdInput = e => {
-    const idvalue = e.target.value;
-
+  handleInput = e => {
+    const { value, name } = e.target;
     this.setState({
-      id: idvalue,
-      idpass: idvalue.indexOf('@') === -1 ? 'failed' : 'passed',
-    });
-  };
-
-  handlePwInput = e => {
-    const pwvalue = e.target.value;
-
-    this.setState({
-      pw: String(pwvalue),
-      pwpass: pwvalue.length >= 5 ? 'nice' : 'shit',
+      [name]: value,
     });
   };
 
   render() {
-    const { idpass, pwpass } = this.state;
-    const { handleIdInput, handlePwInput } = this;
+    const { handleInput } = this;
 
     return (
       <div className="log_in_box">
@@ -41,16 +27,18 @@ class Login extends Component {
         <div className="log_in">
           <div className="id">
             <input
-              onChange={handleIdInput}
+              onChange={handleInput}
               className="id_input"
+              name="id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
           </div>
           <div className="password">
             <input
-              onChange={handlePwInput}
+              onChange={handleInput}
               className="password_input"
+              name="pw"
               type="password"
               placeholder="비밀번호"
             />
@@ -58,10 +46,12 @@ class Login extends Component {
         </div>
 
         <Login_Button
-          idfunc={idpass}
-          pwfunc={pwpass}
+          idfunc={this.state.id.indexOf('@') === -1 ? 'failed' : 'passed'}
+          pwfunc={this.state.pw.length >= 5 ? 'nice' : 'shit'}
           colorfunc={
-            idpass === 'passed' && pwpass === 'nice' ? 'blue' : 'sky_blue'
+            this.state.id.indexOf('@') !== -1 && this.state.pw.length >= 5
+              ? 'blue'
+              : 'sky_blue'
           }
         />
 
