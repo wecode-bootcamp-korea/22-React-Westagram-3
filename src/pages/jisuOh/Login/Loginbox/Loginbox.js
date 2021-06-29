@@ -28,10 +28,6 @@ class Loginbox extends React.Component {
     });
   };
 
-  goToMain = () => {
-    this.props.history.push('./main-jisu');
-  };
-
   render() {
     const { id, pw } = this.state;
     const { handleChange, checkIdAndPassword } = this;
