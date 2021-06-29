@@ -36,8 +36,8 @@ class Feed extends React.Component {
   };
 
   handleChange = e => {
-    const { value } = e.target;
-    this.setState({ comment: value });
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -98,6 +98,7 @@ class Feed extends React.Component {
             <form className="comment__form" onSubmit={addComment}>
               <input
                 type="text"
+                name="comment"
                 className="comment-area"
                 placeholder="댓글 달기..."
                 value={comment}

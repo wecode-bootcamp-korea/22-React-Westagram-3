@@ -22,10 +22,10 @@ class Login extends React.Component {
   };
 
   handleChange = e => {
-    const { className, value } = e.target;
-    className === 'text-id'
-      ? this.setState({ id: value })
-      : this.setState({ pw: value });
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
   };
 
   goToMain = () => {
@@ -50,6 +50,7 @@ class Login extends React.Component {
                 <div className="id-box">
                   <input
                     type="text"
+                    name="id"
                     className="text-id"
                     value={id}
                     onChange={handleChange}
@@ -59,9 +60,10 @@ class Login extends React.Component {
                 <div className="pw-box">
                   <input
                     type="password"
+                    name="pw"
+                    className="pw"
                     value={pw}
                     onChange={handleChange}
-                    className="pw"
                     placeholder="비밀번호"
                   />
                 </div>
