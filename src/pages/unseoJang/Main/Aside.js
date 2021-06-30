@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
+import Recommend from './Recommend';
 
 class Aside extends Component {
+  constructor(props) {
+    super(props);
+    //this.state생성
+    this.state = {
+      recomendMember: [],
+    };
+  }
+  //목데이터
+  componentDidMount() {
+    fetch('http://localhost:3000/data/unseoJang/member.json', {
+      method: 'GET',
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        this.setState({
+          recomendMember: res.data,
+        });
+      });
+  }
   render() {
+    console.log(this.state);
+    const { recomendMember } = this.state;
     return (
       <aside className="other">
         <div className="my-profile">
           <div className="my-profile-img">
-            <a href="#">
+            <a href="#!">
               <img
                 src="/images/unseoJang/94196291_334483640847841_8993817347827433472_n.jpg"
                 alt="seeeeeeo.un님의 프로필 사진"
@@ -16,7 +40,7 @@ class Aside extends Component {
           <div className="my-profile-contetns">
             <div className="contents-box">
               <div className="id-wrap">
-                <a href="#">seeeeeeo.un</a>
+                <a href="#!">seeeeeeo.un</a>
               </div>
               <div className="name-wrap">
                 <span>장서운</span>
@@ -33,113 +57,22 @@ class Aside extends Component {
           <div className="member-recommend">
             <div className="ment">회원을 위한 추천</div>
             <div className="btn-all-wrap">
-              <a href="#" className="btn-all">
+              <a href="#!" className="btn-all">
                 모두보기
               </a>
             </div>
           </div>
           <div className="other-member-wrap">
             <ul>
-              <li>
-                <div className="member-profile-img-wrap">
-                  <a href="#" className="profile-img">
-                    <img
-                      src="/images/unseoJang/94196291_334483640847841_8993817347827433472_n.jpg"
-                      alt="member profile images"
-                    />
-                  </a>
-                </div>
-                <div className="member-profile-contetns">
-                  <div className="member-id-wrap">
-                    <a href="#">
-                      <span>seeeeeeo.un</span>
-                    </a>
-                  </div>
-                  <div>
-                    <span>pjwneeds님 외 3명이 팔로우합니다</span>
-                  </div>
-                </div>
-                <div className="btn-follow-wrap">
-                  <button type="button">
-                    <span>팔로우</span>
-                  </button>
-                </div>
-              </li>
-              <li>
-                <div className="member-profile-img-wrap">
-                  <a href="#" className="profile-img">
-                    <img
-                      src="/images/unseoJang/94196291_334483640847841_8993817347827433472_n.jpg"
-                      alt="member profile images"
-                    />
-                  </a>
-                </div>
-                <div className="member-profile-contetns">
-                  <div className="member-id-wrap">
-                    <a href="#">
-                      <span>seeeeeeo.un</span>
-                    </a>
-                  </div>
-                  <div>
-                    <span>pjwneeds님 외 3명이 팔로우합니다</span>
-                  </div>
-                </div>
-                <div className="btn-follow-wrap">
-                  <button type="button">
-                    <span>팔로우</span>
-                  </button>
-                </div>
-              </li>
-              <li>
-                <div className="member-profile-img-wrap">
-                  <a href="#" className="profile-img">
-                    <img
-                      src="/images/unseoJang/94196291_334483640847841_8993817347827433472_n.jpg"
-                      alt="member profile images"
-                    />
-                  </a>
-                </div>
-                <div className="member-profile-contetns">
-                  <div className="member-id-wrap">
-                    <a href="#">
-                      <span>seeeeeeo.un</span>
-                    </a>
-                  </div>
-                  <div>
-                    <span>pjwneeds님 외 3명이 팔로우합니다</span>
-                  </div>
-                </div>
-                <div className="btn-follow-wrap">
-                  <button type="button">
-                    <span>팔로우</span>
-                  </button>
-                </div>
-              </li>
-              <li>
-                <div className="member-profile-img-wrap">
-                  <a href="#" className="profile-img">
-                    <img
-                      src="/images/unseoJang/94196291_334483640847841_8993817347827433472_n.jpg"
-                      alt="member profile images"
-                    />
-                  </a>
-                </div>
-                <div className="member-profile-contetns">
-                  <div className="member-id-wrap">
-                    <a href="#">
-                      <span>seeeeeeo.un</span>
-                    </a>
-                  </div>
-                  <div>
-                    <span>pjwneeds님 외 3명이 팔로우합니다</span>
-                  </div>
-                </div>
-                <div className="btn-follow-wrap">
-                  <button type="button">
-                    <span>팔로우</span>
-                  </button>
-                </div>
-              </li>
+              {recomendMember.map(el => {
+                return (
+                  <Recommend
+                    memberProfileImg={el.memberProfileImg}
+                    memberId={el.memberId}
+                    follwNum={el.follwNum}
+                  />
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -151,6 +84,7 @@ class Aside extends Component {
                   className="link-btn"
                   href="https://about.instagram.com/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   소개
                 </a>
@@ -179,32 +113,50 @@ class Aside extends Component {
                 </a>
               </li>
               <li className="link">
-                <a className="link-btn" href="/about/jobs/">
+                <a
+                  className="link-btn"
+                  href="https://www.instagram.com//about/jobs/"
+                >
                   채용 정보
                 </a>
               </li>
               <li className="link">
-                <a className="link-btn" href="/legal/privacy/">
+                <a
+                  className="link-btn"
+                  href="https://www.instagram.com//legal/privacy/"
+                >
                   개인정보처리방침
                 </a>
               </li>
               <li className="link">
-                <a className="link-btn _vfM2" href="/legal/terms/">
+                <a
+                  className="link-btn _vfM2"
+                  href="https://www.instagram.com//legal/terms/"
+                >
                   약관
                 </a>
               </li>
               <li className="link">
-                <a className="link-btn" href="/explore/locations/">
+                <a
+                  className="link-btn"
+                  href="https://www.instagram.com//explore/locations/"
+                >
                   위치
                 </a>
               </li>
               <li className="link">
-                <a className="link-btn" href="/directory/profiles/">
+                <a
+                  className="link-btn"
+                  href="https://www.instagram.com//directory/profiles/"
+                >
                   인기 계정
                 </a>
               </li>
               <li className="link">
-                <a className="link-btn" href="/directory/hashtags/">
+                <a
+                  className="link-btn"
+                  href="https://www.instagram.com//directory/hashtags/"
+                >
                   해시태그
                 </a>
               </li>

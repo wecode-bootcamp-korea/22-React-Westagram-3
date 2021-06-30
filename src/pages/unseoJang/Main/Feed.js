@@ -19,7 +19,6 @@ class Feed extends Component {
       commentValue: e.target.value,
       value: e.target.value,
     });
-    console.log(e.target.value);
   };
   //버튼 클릭 이벤트와 함수 생성
   addComment = e => {
@@ -29,9 +28,6 @@ class Feed extends Component {
       commentValue: '',
       value: '',
     });
-    {
-      console.log('버튼 클릭 이벤트와 함수 생성');
-    }
     e.preventDefault();
   };
   //엔터쳤을때
@@ -39,13 +35,10 @@ class Feed extends Component {
     if (e.key === 'enter') {
       this.comment();
     }
-    {
-      console.log('엔터쳤을때');
-    }
   };
   //목데이터
   componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
+    fetch('http://localhost:3000/data/unseoJang/commentData.json', {
       method: 'GET',
     })
       .then(res => {
@@ -58,7 +51,6 @@ class Feed extends Component {
       });
   }
   render() {
-    console.log(this.state);
     const feedList = this.props;
     return (
       <article key="{feedList.key}">
@@ -78,7 +70,7 @@ class Feed extends Component {
             <div className="profile-name">
               <div className="profile-name-wrap">
                 <span className="name-wrap">
-                  <a href="#" className="name">
+                  <a href="#!" className="name">
                     {feedList.userId}
                   </a>
                 </span>
@@ -227,7 +219,7 @@ class Feed extends Component {
               </ul>
             </div>
             <div className="time-wrap">
-              <a href="#">
+              <a href="#!">
                 <time datatime="2021-06-15T07:11:27.000Z">2시간 전</time>
               </a>
             </div>

@@ -6,7 +6,7 @@ class CommentList extends React.Component {
     return (
       <li key="{el.key}">
         <span className="id-wrap">
-          <a href="#" tabIndex="0" className="comment-id">
+          <a href="#!" tabIndex="0" className="comment-id">
             {commentList.userId}
           </a>
         </span>

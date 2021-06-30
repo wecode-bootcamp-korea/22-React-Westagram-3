@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-//import Comment from './Comment';
 import Feed from './Feed';
-// import CommenList from './CommentList';
 
 class ContetnsWrap extends Component {
   constructor(props) {
@@ -13,7 +11,7 @@ class ContetnsWrap extends Component {
   }
   //feed mockdata
   componentDidMount() {
-    fetch('http://localhost:3000/data/feedData.json', {
+    fetch('http://localhost:3000/data/unseoJang/feedData.json', {
       method: 'GET',
     })
       .then(res => {
