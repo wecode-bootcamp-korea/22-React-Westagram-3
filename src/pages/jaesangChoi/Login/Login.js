@@ -46,11 +46,19 @@ class Login extends Component {
           </div>
         </div>
 
-        <Login_Button
+        {/* <Login_Button
           idfunc={id.indexOf('@') === -1 ? 'failed' : 'passed'}
           pwfunc={pw.length >= 5 ? 'nice' : 'shit'}
           colorfunc={
             id.indexOf('@') !== -1 && pw.length >= 5 ? 'blue' : 'sky_blue'
+          }
+        /> */}
+
+        <Login_Button
+          idfunc={this.state.id}
+          pwfunc={this.state.pw}
+          colorfunc={
+            id.indexOf('@') !== -1 && pw.length >= 8 ? 'blue' : 'sky_blue'
           }
         />
 
