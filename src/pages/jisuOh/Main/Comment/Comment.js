@@ -2,8 +2,22 @@ import React from 'react';
 import './Comment.scss';
 
 class Comment extends React.Component {
+  state = {
+    isClicked: false,
+    imagesPath: {
+      clickHeart: 'images/jisuOh/heart-red.png',
+      clickRed: 'images/jisuOh/heart.png',
+    },
+  };
+
+  toggleImage = e => {
+    const { isClicked } = this.state;
+    this.setState({ isClicked: !isClicked });
+  };
+
   render() {
     const { comments, deleteComment } = this.props;
+    const { isClicked, imagesPath } = this.state;
     return (
       <li className="comment">
         <div className="comment__div">
@@ -12,11 +26,11 @@ class Comment extends React.Component {
           <button className="more">더 보기</button>
         </div>
         <div className="like-delete">
-          <button className="mini-like-btn">
+          <button className="mini-like-btn" onClick={this.toggleImage}>
             <img
               alt="Heart"
               className="mini-heart"
-              src="images/jisuOh/heart.png"
+              src={isClicked ? imagesPath.clickHeart : imagesPath.clickRed}
             />
           </button>
           <button
