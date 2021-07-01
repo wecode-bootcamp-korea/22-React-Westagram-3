@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { INFO } from '../../data/footerData';
 import './Footer.scss';
 
@@ -9,9 +10,9 @@ class Footer extends React.Component {
         <div className="meta-link">
           {INFO.map(el => {
             return (
-              <a href="#!" key={el.id}>
+              <Link to="#!" key={el.id}>
                 {el.content}
-              </a>
+              </Link>
             );
           })}
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../../../components/Nav';
 import Feed from './Feed/Feed';
 import Story from './Story/Story';
@@ -54,7 +55,7 @@ class Main extends React.Component {
                   {MAININFO.map(el => {
                     return (
                       <li className="links-item" key={el.id}>
-                        <a href="#!">{el.content}</a>
+                        <Link to="#!">{el.content}</Link>
                       </li>
                     );
                   })}
