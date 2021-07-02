@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentList from '../CommentList/CommentList';
+import Comment from '../Comment/Comment';
 import './Feed.scss';
 
 class Feed extends React.Component {
@@ -90,7 +90,16 @@ class Feed extends React.Component {
           </section>
           <section className="feed__comment">
             <ul className="comment__ul">
-              <CommentList comments={comments} deleteComment={deleteComment} />
+              {comments.map(content => {
+                return (
+                  <Comment
+                    key={content.id}
+                    comments={content}
+                    commentsArr={comments}
+                    deleteComment={deleteComment}
+                  />
+                );
+              })}
             </ul>
             <p className="time">42분 전</p>
           </section>
