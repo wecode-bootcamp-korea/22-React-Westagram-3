@@ -2,10 +2,8 @@ main {
   display: flex;
   justify-content: center;
   gap: 20px;
-  height: 100vh;
   padding-top: 54px;
   box-sizing: border-box;
-  overflow: auto;
 
   .bold_comment {
     font-weight: bold;
