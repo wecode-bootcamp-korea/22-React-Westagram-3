@@ -6,13 +6,18 @@ class Comment extends React.Component {
     isClicked: false,
   };
 
+  sendCommentId = () => {
+    const { comments, deleteComment } = this.props;
+    deleteComment(comments.id);
+  };
+
   toggleImage = e => {
     this.setState(prevState => ({ isClicked: !prevState.isClicked }));
   };
 
   render() {
-    const { comments, deleteComment } = this.props;
     const { isClicked } = this.state;
+    const { comments } = this.props;
     return (
       <li className="comment">
         <div className="comment__div">
@@ -28,10 +33,7 @@ class Comment extends React.Component {
               src={isClicked ? imagePaths.clickHeart : imagePaths.clickRed}
             />
           </button>
-          <button
-            className="delete-btn"
-            onClick={() => deleteComment(comments.id)}
-          >
+          <button className="delete-btn" onClick={this.sendCommentId}>
             X
           </button>
         </div>
