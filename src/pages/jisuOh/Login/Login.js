@@ -4,10 +4,6 @@ import Footer from './Footer/Footer';
 import './Login.scss';
 
 class Login extends React.Component {
-  goToMain = () => {
-    this.props.history.push('./main-jisu');
-  };
-
   render() {
     return (
       <div className="westagram-wrapper">
@@ -16,7 +12,7 @@ class Login extends React.Component {
             <img alt="iPhone" src="images/jisuOh/iphone.png" />
           </article>
           <article className="sign-and-login">
-            <LoginBox goToMain={this.goToMain} />
+            <LoginBox history={this.props.history} />
             <section className="sign-up-box">
               <p className="noaccount">
                 계정이 없으신가요?

@@ -7,6 +7,10 @@ class Loginbox extends React.Component {
     pw: '',
   };
 
+  goToMain = () => {
+    this.props.history.push('./main-jisu');
+  };
+
   checkIdAndPassword = e => {
     const { id, pw } = this.state;
 
@@ -17,7 +21,7 @@ class Loginbox extends React.Component {
     } else if (pw < 5) {
       alert('비밀번호는 5글자 이상이여야 합니다!');
     } else {
-      this.props.goToMain();
+      this.goToMain();
     }
   };
 

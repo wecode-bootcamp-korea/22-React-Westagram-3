@@ -7,8 +7,7 @@ class Comment extends React.Component {
   };
 
   toggleImage = e => {
-    const { isClicked } = this.state;
-    this.setState((prevState) => ({isClicked:!prevState.isClicked}));
+    this.setState(prevState => ({ isClicked: !prevState.isClicked }));
   };
 
   render() {
