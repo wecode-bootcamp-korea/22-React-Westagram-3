@@ -52,10 +52,10 @@ class Main extends React.Component {
               <Recommend />
               <div className="etc-link">
                 <ul className="links">
-                  {MAININFO.map(el => {
+                  {MAININFO.map(info => {
                     return (
-                      <li className="links-item" key={el.id}>
-                        <Link to="#!">{el.content}</Link>
+                      <li className="links-item" key={info.id}>
+                        <Link to="#!">{info.content}</Link>
                       </li>
                     );
                   })}
