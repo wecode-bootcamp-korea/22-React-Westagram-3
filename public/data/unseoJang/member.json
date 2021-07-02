@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "key": 1,
+      "memberProfileImg": "https://pbs.twimg.com/media/EeSFrRZWAAI23L3.jpg",
+      "memberId": "nakebibi",
+      "follwNum": "pjwneeds님 외 3명이 팔로우 합니다."
+    },
+    {
+      "key": 2,
+      "userProfileImg": "https://cdn.hellodd.com/news/photo/202005/71835_craw1.jpg",
+      "memberId": "cat",
+      "follwNum": "cat 외 3명이 팔로우 합니다."
+    },
+    {
+      "userProfileImg": "http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg",
+      "memberId": "dog",
+      "follwNum": "dog님 외 3명이 팔로우 합니다."
+    }
+  ]
+}

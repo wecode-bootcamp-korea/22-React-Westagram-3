@@ -1,0 +1,34 @@
+import React from 'react';
+
+class Recommend extends React.Component {
+  render() {
+    const recommendMember = this.props;
+    const { memberProfileImg, memberId, follwNum } = recommendMember;
+    return (
+      <li>
+        <div className="member-profile-img-wrap">
+          <a href="#!" className="profile-img">
+            <img src={memberProfileImg} alt="member profile images" />
+          </a>
+        </div>
+        <div className="member-profile-contetns">
+          <div className="member-id-wrap">
+            <a href="#!">
+              <span>{memberId}</span>
+            </a>
+          </div>
+          <div>
+            <span>{follwNum}</span>
+          </div>
+        </div>
+        <div className="btn-follow-wrap">
+          <button type="button">
+            <span>팔로우</span>
+          </button>
+        </div>
+      </li>
+    );
+  }
+}
+
+export default Recommend;

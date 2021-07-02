@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 class Nav extends Component {
@@ -8,25 +9,20 @@ class Nav extends Component {
         <div className="header-nav-wrap">
           <div className="header-sub-box">
             <div className="logo-wrap">
-              <a href="/" className="logo">
+              <Link to="/main" className="logo">
                 westagram
-              </a>
+              </Link>
             </div>
             <div className="search-bar-wrap">
-              <label htmlFor="searchBar">
+              <label>
                 <span className="search-icon"></span>
-                <input
-                  type="text"
-                  id="searchBar"
-                  className="search-bar"
-                  placeholder="검색"
-                />
+                <input type="text" className="search-bar" placeholder="검색" />
               </label>
               <div className="recent-search-speech-wrap">
                 <div className="speech-bubble">
                   <ul>
                     <li>
-                      <a href="."></a>
+                      <a href="#!"></a>
                     </li>
                   </ul>
                 </div>
@@ -35,7 +31,7 @@ class Nav extends Component {
             <div className="btn-group">
               <ul>
                 <li>
-                  <a href="/" tabIndex="0">
+                  <Link to="/main" tabIndex="0">
                     <svg
                       aria-label="홈"
                       className="_8-yf5 "
@@ -46,10 +42,14 @@ class Nav extends Component {
                     >
                       <path d="M45.5 48H30.1c-.8 0-1.5-.7-1.5-1.5V34.2c0-2.6-2.1-4.6-4.6-4.6s-4.6 2.1-4.6 4.6v12.3c0 .8-.7 1.5-1.5 1.5H2.5c-.8 0-1.5-.7-1.5-1.5V23c0-.4.2-.8.4-1.1L22.9.4c.6-.6 1.6-.6 2.1 0l21.5 21.5c.3.3.4.7.4 1.1v23.5c.1.8-.6 1.5-1.4 1.5z"></path>
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="xWeGp" href="/direct/inbox/" tabIndex="0">
+                  <a
+                    className="xWeGp"
+                    href="www.instagram.com/direct/inbox/"
+                    tabIndex="0"
+                  >
                     <svg
                       aria-label="Direct"
                       className="_8-yf5 "
@@ -64,7 +64,7 @@ class Nav extends Component {
                 </li>
                 <li>
                   <div className="Fifk5">
-                    <a href="/explore/" tabIndex="0">
+                    <a href="www.instagram.com/explore/" tabIndex="0">
                       <svg
                         aria-label="사람 찾기"
                         className="_8-yf5 "
@@ -83,7 +83,10 @@ class Nav extends Component {
                   </div>
                 </li>
                 <li>
-                  <a className="_0ZPOP kIKUG " href="/accounts/activity/">
+                  <a
+                    className="_0ZPOP kIKUG "
+                    href="www.instagram.com/accounts/activity/"
+                  >
                     <svg
                       aria-label="활동 피드"
                       className="_8-yf5 "
