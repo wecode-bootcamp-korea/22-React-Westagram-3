@@ -1,31 +1,15 @@
+main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 54px;
+  box-sizing: border-box;
 
+  .bold_comment {
+    font-weight: bold;
+  }
 
-body {
-    margin: 0px;
-    overflow: hidden;
-
+  .grey_comment {
+    color: grey;
+  }
 }
-
-
-
-.main {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width:100%;
-    height:100vh;
-    padding-top: 54px;
-    box-sizing: border-box;
-    overflow: auto;
-
-    .bold_comment {
-        font-weight:bold;
-    }
-    
-    .grey_comment {
-        color: grey;
-    }
-
-}
-
-

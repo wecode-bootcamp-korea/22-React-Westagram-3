@@ -1,14 +1,51 @@
 import React, { Component } from 'react';
+import Comment from './Comment/Comment';
 import './Feeds.scss';
 
 class Feeds extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comment: '',
+      comments: [],
+      idnumber: 1,
+    };
+  }
+
+  componentDidMount = () => {
+    this.setState({ comments: this.props.comments });
+  };
+
+  handleComment = e => {
+    this.setState({
+      comment: e.target.value,
+    });
+  };
+
+  addComment = e => {
+    e.preventDefault();
+
+    this.setState({
+      comments: this.state.comments.concat({
+        id: this.state.idnumber + 3,
+        text: this.state.comment,
+      }),
+      comment: '',
+      idnumber: this.state.idnumber + 1,
+    });
+  };
+
   render() {
+    const { comments, comment } = this.state;
+    const { handleComment, addComment } = this;
+    // console.log(this.state);
+
     return (
       <div className="feeds">
         <article>
           <div className="feeds_profile">
             <div className="feeds_profile_image">
-              <img alt="프로필" src="/images/jaesangChoi/profile1.jpeg" />
+              <img alt="profile" src={this.props.profilesrc} />
             </div>
             <p className="feeds_profile_name">
               <span className="feeds_profile_main_name">
@@ -23,28 +60,28 @@ class Feeds extends Component {
             <img
               alt="sunset"
               className="main_feed_img"
-              src="https://images.unsplash.com/photo-1623659993428-0c5504a16ca5?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0Mnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              src={this.props.mainfeedsrc}
             />
           </div>
 
           <div className="comment_icon_box">
             <div className="left_icon">
-              <img alt="하트아이콘" src="/images/jaesangChoi/heart2.png" />
+              <img alt="heart_icon" src="/images/jaesangChoi/heart2.png" />
               <img
-                alt="코멘트아이콘"
+                alt="comment_icon"
                 src="/images/jaesangChoi/commentary.png"
               />
-              <img alt="공유아이콘" src="/images/jaesangChoi/send.png" />
+              <img alt="share_icon" src="/images/jaesangChoi/send.png" />
             </div>
             <div className="right_icon">
-              <img alt="북마크아이콘" src="/images/jaesangChoi/bookmark.png" />
+              <img alt="bookmark_icon" src="/images/jaesangChoi/bookmark.png" />
             </div>
           </div>
 
           <div className="comment_profile">
             <div className="comment_profile_icon">
               <img
-                alt="프로필"
+                alt="profile"
                 src="/images/jaesangChoi/comment_profile.jpeg"
               />
             </div>
@@ -67,25 +104,33 @@ class Feeds extends Component {
               좋았잖아~~~~~
             </div>
             <div className="second_comment_icon">
-              <img alt="하트아이콘" src="/images/jaesangChoi/heart2.png" />
+              <img alt="heart_icon" src="/images/jaesangChoi/heart2.png" />
             </div>
           </div>
 
           <div className="third_comment">42분 전</div>
 
+          <ul className="comment_list">
+            {comments.map(comment => {
+              return <Comment key={comment.id} text={comment.text} />;
+            })}
+          </ul>
+
           <div className="push_comment">
             <div className="push_comment_icon">
-              <img alt="스마일아이콘" src="/images/jaesangChoi/smile.png" />
+              <img alt="smile_icon" src="/images/jaesangChoi/smile.png" />
             </div>
-            <div className="push_comment_text">
+            <form className="push_comment_text" onSubmit={addComment}>
               <input
+                onChange={handleComment}
+                value={comment}
                 className="input_comment"
                 type="text"
                 placeholder="댓글달기..."
               />
-            </div>
+            </form>
             <div className="push_comment_button">
-              <button>게시</button>
+              <button onClick={addComment}>게시</button>
             </div>
           </div>
         </article>

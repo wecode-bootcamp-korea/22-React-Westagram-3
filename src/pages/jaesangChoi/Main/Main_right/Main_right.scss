@@ -1,84 +1,84 @@
 .main_right {
-    position: sticky;
-    top: 50px;
-    width: 293px;
-    margin-top:50px;
+  position: sticky;
+  top: 104px;
+  width: 293px;
+  height: 400px;
 
-    .my_profile {
-        display: flex;
+  .my_profile {
+    display: flex;
 
-        .my_profile_image {
-            padding-right:15px;
-            
-            img {
-                width: 56px;
-                border-radius: 50%;
-            }
-        }
+    .my_profile_image {
+      padding-right: 15px;
 
-        .my_profile_name {
-            align-self: center;
-            flex-grow: 1;
-        }
-
-        .my_profile_change {
-            align-self: center;
-            font-size: 13px;
-        }
+      img {
+        width: 56px;
+        border-radius: 50%;
+      }
     }
 
-    .recommendation {
-        height: 225px;
-        padding-top: 5px;
-        padding-right:5px;
-        padding-left:5px;
-        margin-top: 20px;
-        border: 1px solid #dbdbdb;
-        background-color: #ffffff;
-
-        .recommendation_for_you {
-            display:flex;
-            justify-content: space-between;
-            height: 30px;
-
-            p {
-                align-self: center;
-                padding: 0px 7px;
-            }
-        }
-
-        .recommendation_list {
-            height:33.75px;
-            display: flex;
-            margin-top:10px;
-
-            .recommendation_profile_image img{
-                width: 32px;
-                height: 32px;
-                padding-left: 7px;
-                padding-right: 12px;
-                border-radius: 50%;
-            }
-
-            .recommendation_profile_name {
-                line-height: 100%;
-
-                .recommendation_profile_name_main{
-                    font-size: 15px;
-                    font-weight: bold;
-                }
-
-                .recommendation_profile_name_sub{
-                    color: #959595 ;
-                    font-size: 13px;
-                }
-            }
-        }
+    .my_profile_name {
+      align-self: center;
+      flex-grow: 1;
     }
 
-    .etc {
-        margin-top: 10px;
-        font-size: 13px;;
-        color: #c7c7c7
+    .my_profile_change {
+      align-self: center;
+      font-size: 13px;
     }
+  }
+
+  .recommendation {
+    height: 225px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-top: 20px;
+    border: 1px solid #dbdbdb;
+    background-color: #ffffff;
+
+    .recommendation_for_you {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+
+      p {
+        align-self: center;
+        padding: 0px 7px;
+      }
+    }
+
+    .recommendation_list {
+      height: 33.75px;
+      display: flex;
+      margin-top: 10px;
+
+      .recommendation_profile_image img {
+        width: 32px;
+        height: 32px;
+        padding-left: 7px;
+        padding-right: 12px;
+        border-radius: 50%;
+      }
+
+      .recommendation_profile_name {
+        line-height: 100%;
+
+        .recommendation_profile_name_main {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .recommendation_profile_name_sub {
+          color: #959595;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .etc {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #c7c7c7;
+  }
 }
