@@ -22,6 +22,14 @@ class Main extends React.Component {
       });
   }
 
+  setComment = (comments, feedId) => {
+    this.setState({
+      feeds: this.state.feeds.map(feed => {
+        return feed.feedId === feedId ? { ...feed, comments } : feed;
+      }),
+    });
+  };
+
   render() {
     const { feeds } = this.state;
     return (
@@ -32,7 +40,11 @@ class Main extends React.Component {
             <section className="feed-box">
               <ul>
                 {feeds.map(feed => (
-                  <Feed feedData={feed} key={feed.feedId} />
+                  <Feed
+                    feedData={feed}
+                    key={feed.feedId}
+                    setComment={this.setComment}
+                  />
                 ))}
               </ul>
             </section>

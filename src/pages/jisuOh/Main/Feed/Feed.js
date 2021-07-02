@@ -5,27 +5,22 @@ import './Feed.scss';
 class Feed extends React.Component {
   state = {
     comment: '',
-    comments: [],
   };
 
-  componentDidMount() {
-    const { feedData } = this.props;
-    this.setState({
-      comments: feedData.comments,
-    });
-  }
-
   addComment = e => {
-    const { comments, comment } = this.state;
     e.preventDefault();
-    this.setState({
-      comment: '',
-      comments: comments.concat({
-        id: comments.length + 1,
-        nickname: 'love8080',
-        comment: comment,
-      }),
+    const { comment } = this.state;
+    const { feedData, setComment } = this.props;
+    const { comments, feedId } = feedData;
+
+    const updateComment = feedData.comments.concat({
+      id: comments.length + 1,
+      nickname: 'love8080',
+      comment: comment,
     });
+    this.setState({ comment: '' });
+
+    setComment(updateComment, feedId);
   };
 
   deleteComment = id => {
@@ -42,7 +37,7 @@ class Feed extends React.Component {
 
   render() {
     const { feedData } = this.props;
-    const { comments, comment } = this.state;
+    const { comment } = this.state;
     const { addComment, handleChange, deleteComment } = this;
     return (
       <li className="feed">
@@ -90,12 +85,12 @@ class Feed extends React.Component {
           </section>
           <section className="feed__comment">
             <ul className="comment__ul">
-              {comments.map(content => {
+              {feedData.comments.map(comment => {
                 return (
                   <Comment
-                    key={content.id}
-                    comments={content}
-                    commentsArr={comments}
+                    key={comment.id}
+                    comments={comment}
+                    commentsArr={comment}
                     deleteComment={deleteComment}
                   />
                 );
