@@ -46,13 +46,7 @@ class Login extends Component {
           </div>
         </div>
 
-        <Login_Button
-          idfunc={this.state.id}
-          pwfunc={this.state.pw}
-          colorfunc={
-            id.indexOf('@') !== -1 && pw.length >= 8 ? 'blue' : 'sky_blue'
-          }
-        />
+        <Login_Button idvalue={this.state.id} pwvalue={this.state.pw} />
 
         <p> 비밀번호를 잊으셨나요? </p>
       </div>

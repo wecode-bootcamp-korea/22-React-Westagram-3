@@ -12,9 +12,7 @@ class Feeds extends Component {
   }
 
   callApi = () => {
-    fetch(this.props.fetch, {
-      method: 'GET',
-    })
+    fetch(this.props.fetch)
       .then(res => res.json())
       .then(data => {
         this.setState({
