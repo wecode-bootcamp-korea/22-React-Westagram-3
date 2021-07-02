@@ -3,24 +3,22 @@ import React from 'react';
 class Recommend extends React.Component {
   render() {
     const recommendMember = this.props;
+    const { memberProfileImg, memberId, follwNum } = recommendMember;
     return (
-      <li key="{el.key}">
+      <li>
         <div className="member-profile-img-wrap">
           <a href="#!" className="profile-img">
-            <img
-              src={recommendMember.memberProfileImg}
-              alt="member profile images"
-            />
+            <img src={memberProfileImg} alt="member profile images" />
           </a>
         </div>
         <div className="member-profile-contetns">
           <div className="member-id-wrap">
             <a href="#!">
-              <span>{recommendMember.memberId}</span>
+              <span>{memberId}</span>
             </a>
           </div>
           <div>
-            <span>{recommendMember.follwNum}</span>
+            <span>{follwNum}</span>
           </div>
         </div>
         <div className="btn-follow-wrap">

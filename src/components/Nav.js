@@ -14,20 +14,15 @@ class Nav extends Component {
               </Link>
             </div>
             <div className="search-bar-wrap">
-              <label htmlFor="searchBar">
+              <label>
                 <span className="search-icon"></span>
-                <input
-                  type="text"
-                  id="searchBar"
-                  className="search-bar"
-                  placeholder="검색"
-                />
+                <input type="text" className="search-bar" placeholder="검색" />
               </label>
               <div className="recent-search-speech-wrap">
                 <div className="speech-bubble">
                   <ul>
                     <li>
-                      <a href="."></a>
+                      <a href="#!"></a>
                     </li>
                   </ul>
                 </div>

@@ -27,7 +27,7 @@ class Aside extends Component {
     console.log(this.state);
     const { recomendMember } = this.state;
     return (
-      <aside className="other">
+      <aside className="side-list other">
         <div className="my-profile">
           <div className="my-profile-img">
             <a href="#!">

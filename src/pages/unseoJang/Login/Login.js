@@ -15,11 +15,6 @@ class Login extends Component {
     //IdInout은 event의 약자 e를 인자로 받음
     this.setState({
       idInputValue: e.target.value,
-    });
-  };
-
-  handlePwInput = e => {
-    this.setState({
       pwInputValue: e.target.value,
     });
   };
@@ -64,11 +59,6 @@ class Login extends Component {
         }
       });
   };
-  //link handle
-  goMain = () => {
-    this.props.history.push('/main-unseo');
-  };
-
   render() {
     let title = 'westagram';
     return (
@@ -99,7 +89,7 @@ class Login extends Component {
                             name="Password"
                             id="userPassWord"
                             placeholder="비밀번호"
-                            onChange={this.handlePwInput}
+                            onChange={this.handleIdInput}
                           />
                         </label>
                       </div>
