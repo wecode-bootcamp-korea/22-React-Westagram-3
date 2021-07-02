@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Recommendation_list extends Component {
+class RecommendationList extends Component {
   render() {
     return (
       <div className="recommendation_list">
@@ -21,4 +21,4 @@ class Recommendation_list extends Component {
   }
 }
 
-export default Recommendation_list;
+export default RecommendationList;

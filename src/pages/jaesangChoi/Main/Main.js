@@ -32,22 +32,22 @@ class Mainjaesang extends Component {
     return (
       <div>
         <Nav />
-        <div className="main">
+        <main>
           <div>
-            {feedslist.map(flist => {
+            {feedslist.map(feed => {
               return (
                 <Feeds
-                  key={flist.id}
-                  profilesrc={flist.profilesrc}
-                  mainfeedsrc={flist.mainfeedsrc}
-                  comments={flist.comments}
+                  key={feed.id}
+                  profilesrc={feed.profilesrc}
+                  mainfeedsrc={feed.mainfeedsrc}
+                  comments={feed.comments}
                 />
               );
             })}
           </div>
 
           <Main_right />
-        </div>
+        </main>
       </div>
     );
   }

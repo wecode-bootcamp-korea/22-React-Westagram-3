@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import Recommendation_list from './Recommendation_list/Recommendation_list';
-import RecommendationData from './RecommendationData';
+import RecommendationList from './Recommendation_list/Recommendation_list';
+import RECOMMENDATION_DATA from './RecommendationData';
 import './Main_right.scss';
 
 class Main_right extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Recommendationlist: [],
+      recommendation_List: [],
     };
   }
 
   componentDidMount() {
     this.setState({
-      Recommendationlist: RecommendationData,
+      recommendation_List: RECOMMENDATION_DATA,
     });
   }
 
   render() {
-    const { Recommendationlist } = this.state;
+    const { recommendation_List } = this.state;
 
     return (
       <div className="main_right">
@@ -43,9 +43,9 @@ class Main_right extends Component {
           </div>
 
           <ul>
-            {Recommendationlist.map(list => {
+            {recommendation_List.map(list => {
               return (
-                <Recommendation_list
+                <RecommendationList
                   key={list.id}
                   src={list.src}
                   main_name={list.main_name}

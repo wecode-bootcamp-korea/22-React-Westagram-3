@@ -1,4 +1,4 @@
-const RecommendationData = [
+const RECOMMENDATION_DATA = [
   {
     id: 1,
     src: '/images/jaesangChoi/profile3.jpeg',
@@ -25,4 +25,4 @@ const RecommendationData = [
   },
 ];
 
-export default RecommendationData;
+export default RECOMMENDATION_DATA;

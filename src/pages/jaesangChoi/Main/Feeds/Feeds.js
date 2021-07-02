@@ -8,6 +8,7 @@ class Feeds extends Component {
     this.state = {
       comment: '',
       comments: [],
+      idnumber: 1,
     };
   }
 
@@ -21,23 +22,22 @@ class Feeds extends Component {
     });
   };
 
-  pressButton = e => {
+  addComment = e => {
     e.preventDefault();
 
     this.setState({
       comments: this.state.comments.concat({
-        id: this.state.comments.length + 1,
+        id: this.state.idnumber + 3,
         text: this.state.comment,
       }),
       comment: '',
+      idnumber: this.state.idnumber + 1,
     });
-
-    return;
   };
 
   render() {
     const { comments, comment } = this.state;
-    const { handleComment, pressButton } = this;
+    const { handleComment, addComment } = this;
     // console.log(this.state);
 
     return (
@@ -45,7 +45,7 @@ class Feeds extends Component {
         <article>
           <div className="feeds_profile">
             <div className="feeds_profile_image">
-              <img alt="프로필" src={this.props.profilesrc} />
+              <img alt="profile" src={this.props.profilesrc} />
             </div>
             <p className="feeds_profile_name">
               <span className="feeds_profile_main_name">
@@ -66,22 +66,22 @@ class Feeds extends Component {
 
           <div className="comment_icon_box">
             <div className="left_icon">
-              <img alt="하트아이콘" src="/images/jaesangChoi/heart2.png" />
+              <img alt="heart_icon" src="/images/jaesangChoi/heart2.png" />
               <img
-                alt="코멘트아이콘"
+                alt="comment_icon"
                 src="/images/jaesangChoi/commentary.png"
               />
-              <img alt="공유아이콘" src="/images/jaesangChoi/send.png" />
+              <img alt="share_icon" src="/images/jaesangChoi/send.png" />
             </div>
             <div className="right_icon">
-              <img alt="북마크아이콘" src="/images/jaesangChoi/bookmark.png" />
+              <img alt="bookmark_icon" src="/images/jaesangChoi/bookmark.png" />
             </div>
           </div>
 
           <div className="comment_profile">
             <div className="comment_profile_icon">
               <img
-                alt="프로필"
+                alt="profile"
                 src="/images/jaesangChoi/comment_profile.jpeg"
               />
             </div>
@@ -104,23 +104,23 @@ class Feeds extends Component {
               좋았잖아~~~~~
             </div>
             <div className="second_comment_icon">
-              <img alt="하트아이콘" src="/images/jaesangChoi/heart2.png" />
+              <img alt="heart_icon" src="/images/jaesangChoi/heart2.png" />
             </div>
           </div>
 
           <div className="third_comment">42분 전</div>
 
           <ul className="comment_list">
-            {comments.map(t => {
-              return <Comment key={t.id} text={t.text} />;
+            {comments.map(comment => {
+              return <Comment key={comment.id} text={comment.text} />;
             })}
           </ul>
 
           <div className="push_comment">
             <div className="push_comment_icon">
-              <img alt="스마일아이콘" src="/images/jaesangChoi/smile.png" />
+              <img alt="smile_icon" src="/images/jaesangChoi/smile.png" />
             </div>
-            <form className="push_comment_text" onSubmit={pressButton}>
+            <form className="push_comment_text" onSubmit={addComment}>
               <input
                 onChange={handleComment}
                 value={comment}
@@ -130,7 +130,7 @@ class Feeds extends Component {
               />
             </form>
             <div className="push_comment_button">
-              <button onClick={pressButton}>게시</button>
+              <button onClick={addComment}>게시</button>
             </div>
           </div>
         </article>
