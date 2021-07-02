@@ -12,10 +12,8 @@ class Loginbox extends React.Component {
   };
 
   checkIdAndPassword = e => {
-    const { id, pw } = this.state;
-
     e.preventDefault();
-
+    const { id, pw } = this.state;
     if (!id.includes('@')) {
       alert('@를 포함시켜 주세요!');
     } else if (pw < 5) {
@@ -37,9 +35,9 @@ class Loginbox extends React.Component {
     const { handleChange, checkIdAndPassword } = this;
     return (
       <section className="login-box">
-        <section className="logo">
+        <hgroup className="logo">
           <h1 className="logo__h1">Westagram</h1>
-        </section>
+        </hgroup>
         <form className="login-form">
           <div className="id-box">
             <input
