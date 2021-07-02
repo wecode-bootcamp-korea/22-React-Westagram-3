@@ -4,10 +4,6 @@ import './Comment.scss';
 class Comment extends React.Component {
   state = {
     isClicked: false,
-    imagesPath: {
-      clickHeart: 'images/jisuOh/heart-red.png',
-      clickRed: 'images/jisuOh/heart.png',
-    },
   };
 
   toggleImage = e => {
@@ -17,7 +13,7 @@ class Comment extends React.Component {
 
   render() {
     const { comments, deleteComment } = this.props;
-    const { isClicked, imagesPath } = this.state;
+    const { isClicked } = this.state;
     return (
       <li className="comment">
         <div className="comment__div">
@@ -30,7 +26,7 @@ class Comment extends React.Component {
             <img
               alt="Heart"
               className="mini-heart"
-              src={isClicked ? imagesPath.clickHeart : imagesPath.clickRed}
+              src={isClicked ? imagePaths.clickHeart : imagePaths.clickRed}
             />
           </button>
           <button
@@ -44,5 +40,10 @@ class Comment extends React.Component {
     );
   }
 }
+
+const imagePaths = {
+  clickHeart: 'images/jisuOh/heart-red.png',
+  clickRed: 'images/jisuOh/heart.png',
+};
 
 export default Comment;
