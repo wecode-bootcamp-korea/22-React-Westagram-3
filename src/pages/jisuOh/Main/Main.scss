@@ -9,7 +9,6 @@
   align-items: center;
   background-color: $color-lightgray;
 
-  /* 메인 */
   .we-main-wrapper {
     display: flex;
     justify-content: center;
@@ -29,7 +28,6 @@
       }
     }
 
-    /* aside */
     .position {
       position: relative;
       width: 293px;
@@ -62,7 +60,6 @@
           }
         }
 
-        /* 링크 */
         .etc-link {
           margin-bottom: $padding-value;
 
@@ -82,7 +79,6 @@
           }
         }
 
-        /* 저작권 */
         .copyright {
           font-size: $font-size--micro;
           color: $color-gray;

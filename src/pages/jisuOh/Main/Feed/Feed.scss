@@ -45,7 +45,6 @@
     }
   }
 
-  /* 피드 사진 */
   .feed__photo {
     width: 600px;
     height: 600px;
@@ -58,7 +57,6 @@
     }
   }
 
-  /* 코멘트 wrapper */
   .comment-wrapper {
     display: flex;
     flex-direction: column;
@@ -91,7 +89,6 @@
       margin-right: 0;
     }
 
-    /* 댓글 - '좋아합니다' 정보 */
     .profiles-wrapper {
       display: flex;
       align-items: center;
@@ -114,7 +111,6 @@
       }
     }
 
-    /* 몇 분 전  */
     .feed__comment {
       padding: $padding-value--7 $padding-value;
 
@@ -128,9 +124,6 @@
       }
     }
 
-    /* 댓글 내역 */
-
-    /* 댓글 입력 */
     .comment-input {
       display: flex;
       padding: $padding-value;
