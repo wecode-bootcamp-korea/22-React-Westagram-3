@@ -67,6 +67,7 @@ class Aside extends Component {
               {recomendMember.map(el => {
                 return (
                   <Recommend
+                    key={el.key}
                     memberProfileImg={el.memberProfileImg}
                     memberId={el.memberId}
                     follwNum={el.follwNum}

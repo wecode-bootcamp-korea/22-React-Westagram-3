@@ -30,6 +30,7 @@ class ContetnsWrap extends Component {
         {feedList.map(el => {
           return (
             <Feed
+              key={el.key}
               userProfileImg={el.userProfileImg}
               userId={el.userId}
               userFeedImg={el.userFeedImg}

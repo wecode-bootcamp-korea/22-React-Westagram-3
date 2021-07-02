@@ -4,7 +4,7 @@ class Recommend extends React.Component {
   render() {
     const recommendMember = this.props;
     return (
-      <li>
+      <li key="{el.key}">
         <div className="member-profile-img-wrap">
           <a href="#!" className="profile-img">
             <img

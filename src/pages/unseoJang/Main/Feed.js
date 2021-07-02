@@ -52,6 +52,7 @@ class Feed extends Component {
   }
   render() {
     const feedList = this.props;
+    const commentList = this.state;
     return (
       <article key="{feedList.key}">
         <header>
@@ -213,7 +214,7 @@ class Feed extends Component {
           <section className="comment-wrap">
             <div className="comment-list">
               <ul className="list">
-                {this.state.commentList.map(el => {
+                {commentList.commentList.map(el => {
                   return <Comment key={el.key} comment={el.comment} />;
                 })}
               </ul>
@@ -249,7 +250,7 @@ class Feed extends Component {
                       placeholder="댓글 달기"
                       id="commentInput"
                       onChange={this.handleCommentInput}
-                      value={this.state.value}
+                      value={commentList.value}
                     />
                   </label>
                   <button

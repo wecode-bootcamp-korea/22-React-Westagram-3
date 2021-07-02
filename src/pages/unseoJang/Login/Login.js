@@ -23,7 +23,47 @@ class Login extends Component {
       pwInputValue: e.target.value,
     });
   };
-
+  //login
+  // login = () => {
+  //   fetch('http://10.58.0.102:8000/user/signup', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: this.state.idInputValue,
+  //       password: this.state.pwInputValue,
+  //       nickname: '123456',
+  //       name: '김정숙',
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(response => {
+  //       if (response.token) {
+  //         alert('통신성공');
+  //       } else {
+  //         alert('실패');
+  //       }
+  //     });
+  // };
+  login = () => {
+    fetch('http://10.58.0.102:8000/user/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idInputValue,
+        password: this.state.pwInputValue,
+      }),
+    })
+      .then(response => {
+        response.json();
+        console.log(response.status);
+      })
+      .then(response => {
+        if (response.MESSAGE === 'SUCCESS') {
+          alert('로그인성공');
+          this.props.history.push('/main-unseo');
+        } else {
+          alert('로그인실패');
+        }
+      });
+  };
   //link handle
   goMain = () => {
     this.props.history.push('/main-unseo');
@@ -73,7 +113,7 @@ class Login extends Component {
                               ? false
                               : true
                           }
-                          onClick={this.goMain}
+                          onClick={this.login}
                         >
                           <span>로그인</span>
                         </button>
