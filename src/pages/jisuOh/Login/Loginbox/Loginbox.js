@@ -69,9 +69,9 @@ class Loginbox extends React.Component {
             </button>
           </div>
           <div className="line-or-box">
-            <div></div>
-            <span>또는</span>
-            <div></div>
+            <div className="line"></div>
+            <span className="or">또는</span>
+            <div className="line"></div>
           </div>
           <button className="facebook-btn">
             <img
