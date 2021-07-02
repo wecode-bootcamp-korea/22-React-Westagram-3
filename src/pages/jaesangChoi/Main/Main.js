@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Nav from '../../../components/Nav';
 import Feeds from './Feeds/Feeds';
 import Main_right from './Main_right/Main_right';
-import FeedsData from './Feeds/FeedsData';
 import './Main.scss';
 
 class Mainjaesang extends Component {
@@ -13,9 +12,19 @@ class Mainjaesang extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({ feedslist: FeedsData });
-  }
+  callApi = () => {
+    fetch('http://localhost:3000/data/JaesangChoi/FeedsData.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feedslist: data,
+        });
+      });
+  };
+
+  componentDidMount = () => {
+    this.callApi();
+  };
 
   render() {
     const { feedslist } = this.state;
@@ -29,9 +38,9 @@ class Mainjaesang extends Component {
               return (
                 <Feeds
                   key={flist.id}
-                  fetch={flist.fetch}
                   profilesrc={flist.profilesrc}
                   mainfeedsrc={flist.mainfeedsrc}
+                  comments={flist.comments}
                 />
               );
             })}

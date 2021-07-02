@@ -11,18 +11,8 @@ class Feeds extends Component {
     };
   }
 
-  callApi = () => {
-    fetch(this.props.fetch)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          comments: data,
-        });
-      });
-  };
-
   componentDidMount = () => {
-    this.callApi();
+    this.setState({ comments: this.props.comments });
   };
 
   handleComment = e => {
@@ -48,6 +38,7 @@ class Feeds extends Component {
   render() {
     const { comments, comment } = this.state;
     const { handleComment, pressButton } = this;
+    // console.log(this.state);
 
     return (
       <div className="feeds">
