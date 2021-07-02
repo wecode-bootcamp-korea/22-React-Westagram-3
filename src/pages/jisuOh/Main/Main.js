@@ -31,8 +31,8 @@ class Main extends React.Component {
           <main className="we-main">
             <section className="feed-box">
               <ul>
-                {feeds.map(el => (
-                  <Feed feedData={el} key={el.feedId} />
+                {feeds.map(feed => (
+                  <Feed feedData={feed} key={feed.feedId} />
                 ))}
               </ul>
             </section>
