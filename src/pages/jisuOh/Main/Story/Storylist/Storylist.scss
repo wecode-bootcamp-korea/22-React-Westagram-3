@@ -1,0 +1,15 @@
+@import '../../../style/variables.scss';
+@import '../../../style/profile.scss';
+
+.aside-list {
+  margin: $padding-value 0;
+  .profiles {
+    @include profiles-size($img-profile--width, $img-profile--width);
+  }
+
+  .profile-info {
+    .nickname {
+      margin-bottom: 3px;
+    }
+  }
+}

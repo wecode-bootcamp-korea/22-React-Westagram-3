@@ -1,0 +1,31 @@
+@import '../../style/variables.scss';
+@import '../../style/profile.scss';
+
+.aside-in-list {
+  ul {
+    height: 20vh;
+    overflow: scroll;
+
+    .aside-list {
+      margin: $padding-value 0;
+    }
+
+    /* 팔로우 */
+
+    .aside-follow-list {
+      display: flex;
+      justify-content: space-between;
+      margin: $padding-value 0;
+
+      .profiles {
+        @include profiles-size($img-profile--width, $img-profile--width);
+      }
+
+      .follow-btn {
+        font-size: $font-size--small;
+        font-weight: bold;
+        color: $color-blue;
+      }
+    }
+  }
+}

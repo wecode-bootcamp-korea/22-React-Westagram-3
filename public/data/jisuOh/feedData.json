@@ -1,0 +1,77 @@
+[
+  {
+    "feedId": 1,
+    "nickname": "uffiy",
+    "profileSrc": "images/jisuOh/photo/profile2.jpeg",
+    "likeSrc": "images/jisuOh/photo/profile1.jpeg",
+    "likeNickname": "jisuoh",
+    "feedSrc": "images/jisuOh/aurora.jpg",
+    "comments": [
+      {
+        "id": 1,
+        "nickname": "wecode",
+        "comment": "Welcome to world best coding bootcamp!"
+      },
+      {
+        "id": 2,
+        "nickname": "joonsikyang",
+        "comment": "Hi there."
+      },
+      {
+        "id": 3,
+        "nickname": "jayPark",
+        "comment": "Hey."
+      }
+    ]
+  },
+  {
+    "feedId": 2,
+    "nickname": "jisuoh",
+    "profileSrc": "images/jisuOh/photo/profile1.jpeg",
+    "likeSrc": "images/jisuOh/photo/profile6.jpeg",
+    "likeNickname": "soohyun",
+    "feedSrc": "images/jisuOh/night.jpg",
+    "comments": [
+      {
+        "id": 1,
+        "nickname": "woo",
+        "comment": "React 하다가 죽겠다..."
+      },
+      {
+        "id": 2,
+        "nickname": "fukw231",
+        "comment": "죽지마..."
+      },
+      {
+        "id": 3,
+        "nickname": "whithine13",
+        "comment": "화이팅...!!!!"
+      }
+    ]
+  },
+  {
+    "feedId": 3,
+    "nickname": "PoYs",
+    "profileSrc": "images/jisuOh/photo/profile4.jpeg",
+    "likeSrc": "images/jisuOh/photo/profile5.jpeg",
+    "likeNickname": "hyejin",
+    "feedSrc": "images/jisuOh/tree.jpg",
+    "comments": [
+      {
+        "id": 1,
+        "nickname": "bgbe123",
+        "comment": "오 나무다!"
+      },
+      {
+        "id": 2,
+        "nickname": "hoonuje",
+        "comment": "불타라아"
+      },
+      {
+        "id": 3,
+        "nickname": "sky423",
+        "comment": "돗자리 깔고 누워 자고 싶다"
+      }
+    ]
+  }
+]
