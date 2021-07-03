@@ -14,7 +14,7 @@ class Feed extends React.Component {
     const { comments, feedId } = feedData;
 
     const updateComment = feedData.comments.concat({
-      id: comments.length + 1,
+      id: comments[comments.length - 1].id + 1,
       nickname: 'love8080',
       comment: comment,
     });
