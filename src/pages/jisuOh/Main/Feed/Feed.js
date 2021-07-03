@@ -24,10 +24,13 @@ class Feed extends React.Component {
   };
 
   deleteComment = id => {
-    const { comments } = this.state;
-    this.setState({
-      comments: comments.filter(content => content.id !== id),
+    const { setComment } = this.props;
+    const { comments, feedId } = this.props.feedData;
+    const updateComment = comments.filter(comment => {
+      return id !== comment.id;
     });
+
+    setComment(updateComment, feedId);
   };
 
   handleChange = e => {

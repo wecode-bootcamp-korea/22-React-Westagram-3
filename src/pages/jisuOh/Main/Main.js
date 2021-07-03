@@ -44,6 +44,7 @@ class Main extends React.Component {
                     feedData={feed}
                     key={feed.feedId}
                     setComment={this.setComment}
+                    deleteComment={this.deleteComment}
                   />
                 ))}
               </ul>

@@ -7,8 +7,8 @@ class Comment extends React.Component {
   };
 
   sendCommentId = () => {
-    const { comments, deleteComment } = this.props;
-    deleteComment(comments.id);
+    const { comments, feedId, deleteComment } = this.props;
+    deleteComment(comments.id, feedId);
   };
 
   toggleImage = e => {
